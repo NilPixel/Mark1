@@ -3,6 +3,176 @@
 <mapper namespace="com.starkindustries.dao.PayInfoMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payPlatform" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="platformNumber" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platformStatus" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, payPlatform, platformNumber, platformStatus, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_pay_info
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_pay_info
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (id, userId, orderNo, 
+      payPlatform, platformNumber, platformStatus, 
+      createTime, updateTime)
+    values (#{id,jdbcType=TINYINT}, #{userid,jdbcType=TINYINT}, #{orderno,jdbcType=INTEGER}, 
+      #{payplatform,jdbcType=TINYINT}, #{platformnumber,jdbcType=VARCHAR}, #{platformstatus,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="payplatform != null">
+        payPlatform,
+      </if>
+      <if test="platformnumber != null">
+        platformNumber,
+      </if>
+      <if test="platformstatus != null">
+        platformStatus,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        #{payplatform,jdbcType=TINYINT},
+      </if>
+      <if test="platformnumber != null">
+        #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        payPlatform = #{payplatform,jdbcType=TINYINT},
+      </if>
+      <if test="platformnumber != null">
+        platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    set userId = #{userid,jdbcType=TINYINT},
+      orderNo = #{orderno,jdbcType=INTEGER},
+      payPlatform = #{payplatform,jdbcType=TINYINT},
+      platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
       <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>

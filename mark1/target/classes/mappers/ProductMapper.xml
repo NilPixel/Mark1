@@ -30,4 +30,33 @@
       </if>
     </trim>
   </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Product">
+    <constructor>
+      <arg column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sub_images" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product (detail, sub_images)
+    values (#{detail,jdbcType=VARCHAR}, #{subImages,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="subImages != null">
+        sub_images,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="subImages != null">
+        #{subImages,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
 </mapper>

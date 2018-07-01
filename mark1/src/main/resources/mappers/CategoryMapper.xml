@@ -3,6 +3,165 @@
 <mapper namespace="com.starkindustries.dao.CategoryMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Category">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="parentId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="status" javaType="byte[]" jdbcType="BIT" />
+      <arg column="sortOrder" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, parentId, name, status, sortOrder, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_category
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_category
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category (id, parentId, name, 
+      status, sortOrder, createTime, 
+      updateTime)
+    values (#{id,jdbcType=TINYINT}, #{parentid,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, 
+      #{status,jdbcType=BIT}, #{sortorder,jdbcType=TINYINT}, #{createtime,jdbcType=DATE}, 
+      #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="parentid != null">
+        parentId,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="sortorder != null">
+        sortOrder,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="parentid != null">
+        #{parentid,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=BIT},
+      </if>
+      <if test="sortorder != null">
+        #{sortorder,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Category">
+    update mark_one_category
+    <set>
+      <if test="parentid != null">
+        parentId = #{parentid,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=BIT},
+      </if>
+      <if test="sortorder != null">
+        sortOrder = #{sortorder,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Category">
+    update mark_one_category
+    set parentId = #{parentid,jdbcType=TINYINT},
+      name = #{name,jdbcType=VARCHAR},
+      status = #{status,jdbcType=BIT},
+      sortOrder = #{sortorder,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Category">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Category">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Category">
+    insert into mark_one_category
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Category">
+    <constructor>
       <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>

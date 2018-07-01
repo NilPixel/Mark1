@@ -3,6 +3,239 @@
 <mapper namespace="com.starkindustries.dao.ProductMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Product">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sub_images" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="categoryId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="subtitle" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="mainImage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="stock" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, detail, sub_images, categoryId, name, subtitle, mainImage, price, stock, status, 
+    createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_product
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_product
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product (id, detail, sub_images, 
+      categoryId, name, subtitle, 
+      mainImage, price, stock, 
+      status, createTime, updateTime
+      )
+    values (#{id,jdbcType=TINYINT}, #{detail,jdbcType=VARCHAR}, #{subImages,jdbcType=VARCHAR}, 
+      #{categoryid,jdbcType=TINYINT}, #{name,jdbcType=VARCHAR}, #{subtitle,jdbcType=VARCHAR}, 
+      #{mainimage,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{stock,jdbcType=TINYINT}, 
+      #{status,jdbcType=TINYINT}, #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="subImages != null">
+        sub_images,
+      </if>
+      <if test="categoryid != null">
+        categoryId,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="subtitle != null">
+        subtitle,
+      </if>
+      <if test="mainimage != null">
+        mainImage,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="stock != null">
+        stock,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="subImages != null">
+        #{subImages,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryid != null">
+        #{categoryid,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subtitle != null">
+        #{subtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="mainimage != null">
+        #{mainimage,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        #{stock,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Product">
+    update mark_one_product
+    <set>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="subImages != null">
+        sub_images = #{subImages,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryid != null">
+        categoryId = #{categoryid,jdbcType=TINYINT},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="subtitle != null">
+        subtitle = #{subtitle,jdbcType=VARCHAR},
+      </if>
+      <if test="mainimage != null">
+        mainImage = #{mainimage,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="stock != null">
+        stock = #{stock,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Product">
+    update mark_one_product
+    set detail = #{detail,jdbcType=VARCHAR},
+      sub_images = #{subImages,jdbcType=VARCHAR},
+      categoryId = #{categoryid,jdbcType=TINYINT},
+      name = #{name,jdbcType=VARCHAR},
+      subtitle = #{subtitle,jdbcType=VARCHAR},
+      mainImage = #{mainimage,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      stock = #{stock,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Product">
+    <constructor>
+      <arg column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sub_images" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product (detail, sub_images)
+    values (#{detail,jdbcType=VARCHAR}, #{subImages,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="subImages != null">
+        sub_images,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="subImages != null">
+        #{subImages,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Product">
+    <constructor>
+      <arg column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sub_images" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product (detail, sub_images)
+    values (#{detail,jdbcType=VARCHAR}, #{subImages,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Product">
+    insert into mark_one_product
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="subImages != null">
+        sub_images,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="subImages != null">
+        #{subImages,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Product">
+    <constructor>
       <arg column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="sub_images" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>

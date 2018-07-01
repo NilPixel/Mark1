@@ -3,6 +3,165 @@
 <mapper namespace="com.starkindustries.dao.CartMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Cart">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="productId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="quantity" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="checked" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, productId, quantity, checked, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_cart
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_cart
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart (id, userId, productId, 
+      quantity, checked, createTime, 
+      updateTime)
+    values (#{id,jdbcType=TINYINT}, #{userid,jdbcType=TINYINT}, #{productid,jdbcType=TINYINT}, 
+      #{quantity,jdbcType=TINYINT}, #{checked,jdbcType=TINYINT}, #{createtime,jdbcType=DATE}, 
+      #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="productid != null">
+        productId,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="checked != null">
+        checked,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="productid != null">
+        #{productid,jdbcType=TINYINT},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=TINYINT},
+      </if>
+      <if test="checked != null">
+        #{checked,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Cart">
+    update mark_one_cart
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="productid != null">
+        productId = #{productid,jdbcType=TINYINT},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=TINYINT},
+      </if>
+      <if test="checked != null">
+        checked = #{checked,jdbcType=TINYINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Cart">
+    update mark_one_cart
+    set userId = #{userid,jdbcType=TINYINT},
+      productId = #{productid,jdbcType=TINYINT},
+      quantity = #{quantity,jdbcType=TINYINT},
+      checked = #{checked,jdbcType=TINYINT},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Cart">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Cart">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Cart">
+    insert into mark_one_cart
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Cart">
+    <constructor>
       <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>

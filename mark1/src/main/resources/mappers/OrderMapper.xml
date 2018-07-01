@@ -3,6 +3,247 @@
 <mapper namespace="com.starkindustries.dao.OrderMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="shippingId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="payment" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="paymentType" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="postage" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="paymentTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="sendTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="closeTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, orderNo, userId, shippingId, payment, paymentType, postage, status, paymentTime, 
+    sendTime, endTime, closeTime, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_order
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (id, orderNo, userId, 
+      shippingId, payment, paymentType, 
+      postage, status, paymentTime, 
+      sendTime, endTime, closeTime, 
+      createTime, updateTime)
+    values (#{id,jdbcType=TINYINT}, #{orderno,jdbcType=INTEGER}, #{userid,jdbcType=TINYINT}, 
+      #{shippingid,jdbcType=TINYINT}, #{payment,jdbcType=DECIMAL}, #{paymenttype,jdbcType=TINYINT}, 
+      #{postage,jdbcType=TINYINT}, #{status,jdbcType=TINYINT}, #{paymenttime,jdbcType=DATE}, 
+      #{sendtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{closetime,jdbcType=DATE}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="shippingid != null">
+        shippingId,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="paymenttype != null">
+        paymentType,
+      </if>
+      <if test="postage != null">
+        postage,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="closetime != null">
+        closeTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="shippingid != null">
+        #{shippingid,jdbcType=TINYINT},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=TINYINT},
+      </if>
+      <if test="postage != null">
+        #{postage,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    <set>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="shippingid != null">
+        shippingId = #{shippingid,jdbcType=TINYINT},
+      </if>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        paymentType = #{paymenttype,jdbcType=TINYINT},
+      </if>
+      <if test="postage != null">
+        postage = #{postage,jdbcType=TINYINT},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        closeTime = #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    set orderNo = #{orderno,jdbcType=INTEGER},
+      userId = #{userid,jdbcType=TINYINT},
+      shippingId = #{shippingid,jdbcType=TINYINT},
+      payment = #{payment,jdbcType=DECIMAL},
+      paymentType = #{paymenttype,jdbcType=TINYINT},
+      postage = #{postage,jdbcType=TINYINT},
+      status = #{status,jdbcType=TINYINT},
+      paymentTime = #{paymenttime,jdbcType=DATE},
+      sendTime = #{sendtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      closeTime = #{closetime,jdbcType=DATE},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
       <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>

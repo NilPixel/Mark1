@@ -3,6 +3,212 @@
 <mapper namespace="com.starkindustries.dao.OrderItemMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.OrderItem">
     <constructor>
+      <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="productId" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="productName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="productImage" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="currentUnitPrice" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="quantity" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="totalPrice" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, productId, productName, productImage, currentUnitPrice, quantity, 
+    totalPrice, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Byte" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order_item
+    where id = #{id,jdbcType=TINYINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Byte">
+    delete from mark_one_order_item
+    where id = #{id,jdbcType=TINYINT}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item (id, userId, orderNo, 
+      productId, productName, productImage, 
+      currentUnitPrice, quantity, totalPrice, 
+      createTime, updateTime)
+    values (#{id,jdbcType=TINYINT}, #{userid,jdbcType=TINYINT}, #{orderno,jdbcType=INTEGER}, 
+      #{productid,jdbcType=TINYINT}, #{productname,jdbcType=VARCHAR}, #{productimage,jdbcType=VARCHAR}, 
+      #{currentunitprice,jdbcType=DECIMAL}, #{quantity,jdbcType=TINYINT}, #{totalprice,jdbcType=DECIMAL}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="productid != null">
+        productId,
+      </if>
+      <if test="productname != null">
+        productName,
+      </if>
+      <if test="productimage != null">
+        productImage,
+      </if>
+      <if test="currentunitprice != null">
+        currentUnitPrice,
+      </if>
+      <if test="quantity != null">
+        quantity,
+      </if>
+      <if test="totalprice != null">
+        totalPrice,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=TINYINT},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="productid != null">
+        #{productid,jdbcType=TINYINT},
+      </if>
+      <if test="productname != null">
+        #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="productimage != null">
+        #{productimage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentunitprice != null">
+        #{currentunitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=TINYINT},
+      </if>
+      <if test="totalprice != null">
+        #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.OrderItem">
+    update mark_one_order_item
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=TINYINT},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="productid != null">
+        productId = #{productid,jdbcType=TINYINT},
+      </if>
+      <if test="productname != null">
+        productName = #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="productimage != null">
+        productImage = #{productimage,jdbcType=VARCHAR},
+      </if>
+      <if test="currentunitprice != null">
+        currentUnitPrice = #{currentunitprice,jdbcType=DECIMAL},
+      </if>
+      <if test="quantity != null">
+        quantity = #{quantity,jdbcType=TINYINT},
+      </if>
+      <if test="totalprice != null">
+        totalPrice = #{totalprice,jdbcType=DECIMAL},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.OrderItem">
+    update mark_one_order_item
+    set userId = #{userid,jdbcType=TINYINT},
+      orderNo = #{orderno,jdbcType=INTEGER},
+      productId = #{productid,jdbcType=TINYINT},
+      productName = #{productname,jdbcType=VARCHAR},
+      productImage = #{productimage,jdbcType=VARCHAR},
+      currentUnitPrice = #{currentunitprice,jdbcType=DECIMAL},
+      quantity = #{quantity,jdbcType=TINYINT},
+      totalPrice = #{totalprice,jdbcType=DECIMAL},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=TINYINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.OrderItem">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.OrderItem">
+    <constructor>
+      <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item (test)
+    values (#{test,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.OrderItem">
+    insert into mark_one_order_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        test,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="test != null">
+        #{test,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.OrderItem">
+    <constructor>
       <arg column="test" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
