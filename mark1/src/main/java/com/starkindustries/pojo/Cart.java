@@ -3,21 +3,21 @@ package com.starkindustries.pojo;
 import java.util.Date;
 
 public class Cart {
-    private Byte id;
+    private Integer id;
 
-    private Byte userid;
+    private Integer userid;
 
-    private Byte productid;
+    private Integer productid;
 
-    private Byte quantity;
+    private Integer quantity;
 
-    private Byte checked;
+    private Integer checked;
 
     private Date createtime;
 
     private Date updatetime;
 
-    public Cart(Byte id, Byte userid, Byte productid, Byte quantity, Byte checked, Date createtime, Date updatetime) {
+    public Cart(Integer id, Integer userid, Integer productid, Integer quantity, Integer checked, Date createtime, Date updatetime) {
         this.id = id;
         this.userid = userid;
         this.productid = productid;
@@ -31,43 +31,43 @@ public class Cart {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Byte getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Byte userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public Byte getProductid() {
+    public Integer getProductid() {
         return productid;
     }
 
-    public void setProductid(Byte productid) {
+    public void setProductid(Integer productid) {
         this.productid = productid;
     }
 
-    public Byte getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Byte quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public Byte getChecked() {
+    public Integer getChecked() {
         return checked;
     }
 
-    public void setChecked(Byte checked) {
+    public void setChecked(Integer checked) {
         this.checked = checked;
     }
 

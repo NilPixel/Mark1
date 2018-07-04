@@ -3,13 +3,13 @@ package com.starkindustries.dao;
 import com.starkindustries.pojo.Cart;
 
 public interface CartMapper {
-    int deleteByPrimaryKey(Byte id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Cart record);
 
     int insertSelective(Cart record);
 
-    Cart selectByPrimaryKey(Byte id);
+    Cart selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Cart record);
 

@@ -3,6 +3,706 @@
 <mapper namespace="com.starkindustries.dao.ShippingMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Shipping">
     <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receiverName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverPhone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverMobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverProvince" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverCity" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverDistrict" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverAddress" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverZip" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, receiverName, receiverPhone, receiverMobile, receiverProvince, receiverCity, 
+    receiverDistrict, receiverAddress, receiverZip, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping (id, userId, receiverName, 
+      receiverPhone, receiverMobile, receiverProvince, 
+      receiverCity, receiverDistrict, receiverAddress, 
+      receiverZip, createTime, updateTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{receivername,jdbcType=VARCHAR}, 
+      #{receiverphone,jdbcType=VARCHAR}, #{receivermobile,jdbcType=VARCHAR}, #{receiverprovince,jdbcType=VARCHAR}, 
+      #{receivercity,jdbcType=VARCHAR}, #{receiverdistrict,jdbcType=VARCHAR}, #{receiveraddress,jdbcType=VARCHAR}, 
+      #{receiverzip,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="receivername != null">
+        receiverName,
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone,
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile,
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince,
+      </if>
+      <if test="receivercity != null">
+        receiverCity,
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict,
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress,
+      </if>
+      <if test="receiverzip != null">
+        receiverZip,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        receiverName = #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        receiverCity = #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    set userId = #{userid,jdbcType=INTEGER},
+      receiverName = #{receivername,jdbcType=VARCHAR},
+      receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      receiverCity = #{receivercity,jdbcType=VARCHAR},
+      receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Shipping">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receiverName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverPhone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverMobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverProvince" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverCity" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverDistrict" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverAddress" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverZip" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, receiverName, receiverPhone, receiverMobile, receiverProvince, receiverCity, 
+    receiverDistrict, receiverAddress, receiverZip, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping (id, userId, receiverName, 
+      receiverPhone, receiverMobile, receiverProvince, 
+      receiverCity, receiverDistrict, receiverAddress, 
+      receiverZip, createTime, updateTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{receivername,jdbcType=VARCHAR}, 
+      #{receiverphone,jdbcType=VARCHAR}, #{receivermobile,jdbcType=VARCHAR}, #{receiverprovince,jdbcType=VARCHAR}, 
+      #{receivercity,jdbcType=VARCHAR}, #{receiverdistrict,jdbcType=VARCHAR}, #{receiveraddress,jdbcType=VARCHAR}, 
+      #{receiverzip,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="receivername != null">
+        receiverName,
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone,
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile,
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince,
+      </if>
+      <if test="receivercity != null">
+        receiverCity,
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict,
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress,
+      </if>
+      <if test="receiverzip != null">
+        receiverZip,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        receiverName = #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        receiverCity = #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    set userId = #{userid,jdbcType=INTEGER},
+      receiverName = #{receivername,jdbcType=VARCHAR},
+      receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      receiverCity = #{receivercity,jdbcType=VARCHAR},
+      receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Shipping">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receiverName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverPhone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverMobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverProvince" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverCity" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverDistrict" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverAddress" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverZip" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, receiverName, receiverPhone, receiverMobile, receiverProvince, receiverCity, 
+    receiverDistrict, receiverAddress, receiverZip, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping (id, userId, receiverName, 
+      receiverPhone, receiverMobile, receiverProvince, 
+      receiverCity, receiverDistrict, receiverAddress, 
+      receiverZip, createTime, updateTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{receivername,jdbcType=VARCHAR}, 
+      #{receiverphone,jdbcType=VARCHAR}, #{receivermobile,jdbcType=VARCHAR}, #{receiverprovince,jdbcType=VARCHAR}, 
+      #{receivercity,jdbcType=VARCHAR}, #{receiverdistrict,jdbcType=VARCHAR}, #{receiveraddress,jdbcType=VARCHAR}, 
+      #{receiverzip,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="receivername != null">
+        receiverName,
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone,
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile,
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince,
+      </if>
+      <if test="receivercity != null">
+        receiverCity,
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict,
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress,
+      </if>
+      <if test="receiverzip != null">
+        receiverZip,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        receiverName = #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        receiverCity = #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    set userId = #{userid,jdbcType=INTEGER},
+      receiverName = #{receivername,jdbcType=VARCHAR},
+      receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      receiverCity = #{receivercity,jdbcType=VARCHAR},
+      receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Shipping">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="receiverName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverPhone" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverMobile" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverProvince" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverCity" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverDistrict" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverAddress" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="receiverZip" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, receiverName, receiverPhone, receiverMobile, receiverProvince, receiverCity, 
+    receiverDistrict, receiverAddress, receiverZip, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_shipping
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping (id, userId, receiverName, 
+      receiverPhone, receiverMobile, receiverProvince, 
+      receiverCity, receiverDistrict, receiverAddress, 
+      receiverZip, createTime, updateTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{receivername,jdbcType=VARCHAR}, 
+      #{receiverphone,jdbcType=VARCHAR}, #{receivermobile,jdbcType=VARCHAR}, #{receiverprovince,jdbcType=VARCHAR}, 
+      #{receivercity,jdbcType=VARCHAR}, #{receiverdistrict,jdbcType=VARCHAR}, #{receiveraddress,jdbcType=VARCHAR}, 
+      #{receiverzip,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Shipping">
+    insert into mark_one_shipping
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="receivername != null">
+        receiverName,
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone,
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile,
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince,
+      </if>
+      <if test="receivercity != null">
+        receiverCity,
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict,
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress,
+      </if>
+      <if test="receiverzip != null">
+        receiverZip,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="receivername != null">
+        receiverName = #{receivername,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverphone != null">
+        receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      </if>
+      <if test="receivermobile != null">
+        receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverprovince != null">
+        receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="receivercity != null">
+        receiverCity = #{receivercity,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverdistrict != null">
+        receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveraddress != null">
+        receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      </if>
+      <if test="receiverzip != null">
+        receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Shipping">
+    update mark_one_shipping
+    set userId = #{userid,jdbcType=INTEGER},
+      receiverName = #{receivername,jdbcType=VARCHAR},
+      receiverPhone = #{receiverphone,jdbcType=VARCHAR},
+      receiverMobile = #{receivermobile,jdbcType=VARCHAR},
+      receiverProvince = #{receiverprovince,jdbcType=VARCHAR},
+      receiverCity = #{receivercity,jdbcType=VARCHAR},
+      receiverDistrict = #{receiverdistrict,jdbcType=VARCHAR},
+      receiverAddress = #{receiveraddress,jdbcType=VARCHAR},
+      receiverZip = #{receiverzip,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Shipping">
+    <constructor>
       <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="receiverName" javaType="java.lang.String" jdbcType="VARCHAR" />

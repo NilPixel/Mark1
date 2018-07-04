@@ -4,21 +4,21 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
-    private Byte id;
+    private Integer id;
 
-    private Integer orderno;
+    private Long orderno;
 
-    private Byte userid;
+    private Integer userid;
 
-    private Byte shippingid;
+    private Integer shippingid;
 
     private BigDecimal payment;
 
-    private Byte paymenttype;
+    private Integer paymenttype;
 
-    private Byte postage;
+    private Integer postage;
 
-    private Byte status;
+    private Integer status;
 
     private Date paymenttime;
 
@@ -32,7 +32,7 @@ public class Order {
 
     private Date updatetime;
 
-    public Order(Byte id, Integer orderno, Byte userid, Byte shippingid, BigDecimal payment, Byte paymenttype, Byte postage, Byte status, Date paymenttime, Date sendtime, Date endtime, Date closetime, Date createtime, Date updatetime) {
+    public Order(Integer id, Long orderno, Integer userid, Integer shippingid, BigDecimal payment, Integer paymenttype, Integer postage, Integer status, Date paymenttime, Date sendtime, Date endtime, Date closetime, Date createtime, Date updatetime) {
         this.id = id;
         this.orderno = orderno;
         this.userid = userid;
@@ -53,35 +53,35 @@ public class Order {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getOrderno() {
+    public Long getOrderno() {
         return orderno;
     }
 
-    public void setOrderno(Integer orderno) {
+    public void setOrderno(Long orderno) {
         this.orderno = orderno;
     }
 
-    public Byte getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Byte userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public Byte getShippingid() {
+    public Integer getShippingid() {
         return shippingid;
     }
 
-    public void setShippingid(Byte shippingid) {
+    public void setShippingid(Integer shippingid) {
         this.shippingid = shippingid;
     }
 
@@ -93,27 +93,27 @@ public class Order {
         this.payment = payment;
     }
 
-    public Byte getPaymenttype() {
+    public Integer getPaymenttype() {
         return paymenttype;
     }
 
-    public void setPaymenttype(Byte paymenttype) {
+    public void setPaymenttype(Integer paymenttype) {
         this.paymenttype = paymenttype;
     }
 
-    public Byte getPostage() {
+    public Integer getPostage() {
         return postage;
     }
 
-    public void setPostage(Byte postage) {
+    public void setPostage(Integer postage) {
         this.postage = postage;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

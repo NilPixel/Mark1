@@ -3,21 +3,21 @@ package com.starkindustries.pojo;
 import java.util.Date;
 
 public class Category {
-    private Byte id;
+    private Integer id;
 
-    private Byte parentid;
+    private Integer parentid;
 
     private String name;
 
     private byte[] status;
 
-    private Byte sortorder;
+    private Integer sortorder;
 
     private Date createtime;
 
     private Date updatetime;
 
-    public Category(Byte id, Byte parentid, String name, byte[] status, Byte sortorder, Date createtime, Date updatetime) {
+    public Category(Integer id, Integer parentid, String name, byte[] status, Integer sortorder, Date createtime, Date updatetime) {
         this.id = id;
         this.parentid = parentid;
         this.name = name;
@@ -31,19 +31,19 @@ public class Category {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Byte getParentid() {
+    public Integer getParentid() {
         return parentid;
     }
 
-    public void setParentid(Byte parentid) {
+    public void setParentid(Integer parentid) {
         this.parentid = parentid;
     }
 
@@ -63,11 +63,11 @@ public class Category {
         this.status = status;
     }
 
-    public Byte getSortorder() {
+    public Integer getSortorder() {
         return sortorder;
     }
 
-    public void setSortorder(Byte sortorder) {
+    public void setSortorder(Integer sortorder) {
         this.sortorder = sortorder;
     }
 

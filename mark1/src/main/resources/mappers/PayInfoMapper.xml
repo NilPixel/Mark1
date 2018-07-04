@@ -3,6 +3,510 @@
 <mapper namespace="com.starkindustries.dao.PayInfoMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
     <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="payPlatform" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="platformNumber" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platformStatus" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, payPlatform, platformNumber, platformStatus, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (id, userId, orderNo, 
+      payPlatform, platformNumber, platformStatus, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{orderno,jdbcType=BIGINT}, 
+      #{payplatform,jdbcType=INTEGER}, #{platformnumber,jdbcType=VARCHAR}, #{platformstatus,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="payplatform != null">
+        payPlatform,
+      </if>
+      <if test="platformnumber != null">
+        platformNumber,
+      </if>
+      <if test="platformstatus != null">
+        platformStatus,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="payplatform != null">
+        #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="payplatform != null">
+        payPlatform = #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    set userId = #{userid,jdbcType=INTEGER},
+      orderNo = #{orderno,jdbcType=BIGINT},
+      payPlatform = #{payplatform,jdbcType=INTEGER},
+      platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payPlatform" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="platformNumber" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platformStatus" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, payPlatform, platformNumber, platformStatus, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (id, userId, orderNo, 
+      payPlatform, platformNumber, platformStatus, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{orderno,jdbcType=INTEGER}, 
+      #{payplatform,jdbcType=INTEGER}, #{platformnumber,jdbcType=VARCHAR}, #{platformstatus,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="payplatform != null">
+        payPlatform,
+      </if>
+      <if test="platformnumber != null">
+        platformNumber,
+      </if>
+      <if test="platformstatus != null">
+        platformStatus,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        payPlatform = #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    set userId = #{userid,jdbcType=INTEGER},
+      orderNo = #{orderno,jdbcType=INTEGER},
+      payPlatform = #{payplatform,jdbcType=INTEGER},
+      platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payPlatform" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="platformNumber" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platformStatus" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, payPlatform, platformNumber, platformStatus, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (id, userId, orderNo, 
+      payPlatform, platformNumber, platformStatus, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{orderno,jdbcType=INTEGER}, 
+      #{payplatform,jdbcType=INTEGER}, #{platformnumber,jdbcType=VARCHAR}, #{platformstatus,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="payplatform != null">
+        payPlatform,
+      </if>
+      <if test="platformnumber != null">
+        platformNumber,
+      </if>
+      <if test="platformstatus != null">
+        platformStatus,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        payPlatform = #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    set userId = #{userid,jdbcType=INTEGER},
+      orderNo = #{orderno,jdbcType=INTEGER},
+      payPlatform = #{payplatform,jdbcType=INTEGER},
+      platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payPlatform" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="platformNumber" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="platformStatus" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, userId, orderNo, payPlatform, platformNumber, platformStatus, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_pay_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info (id, userId, orderNo, 
+      payPlatform, platformNumber, platformStatus, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{orderno,jdbcType=INTEGER}, 
+      #{payplatform,jdbcType=INTEGER}, #{platformnumber,jdbcType=VARCHAR}, #{platformstatus,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.PayInfo">
+    insert into mark_one_pay_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="payplatform != null">
+        payPlatform,
+      </if>
+      <if test="platformnumber != null">
+        platformNumber,
+      </if>
+      <if test="platformstatus != null">
+        platformStatus,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    <set>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="payplatform != null">
+        payPlatform = #{payplatform,jdbcType=INTEGER},
+      </if>
+      <if test="platformnumber != null">
+        platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="platformstatus != null">
+        platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.PayInfo">
+    update mark_one_pay_info
+    set userId = #{userid,jdbcType=INTEGER},
+      orderNo = #{orderno,jdbcType=INTEGER},
+      payPlatform = #{payplatform,jdbcType=INTEGER},
+      platformNumber = #{platformnumber,jdbcType=VARCHAR},
+      platformStatus = #{platformstatus,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.PayInfo">
+    <constructor>
       <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />

@@ -3,13 +3,13 @@ package com.starkindustries.dao;
 import com.starkindustries.pojo.PayInfo;
 
 public interface PayInfoMapper {
-    int deleteByPrimaryKey(Byte id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(PayInfo record);
 
     int insertSelective(PayInfo record);
 
-    PayInfo selectByPrimaryKey(Byte id);
+    PayInfo selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(PayInfo record);
 

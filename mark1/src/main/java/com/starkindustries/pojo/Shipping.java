@@ -3,9 +3,9 @@ package com.starkindustries.pojo;
 import java.util.Date;
 
 public class Shipping {
-    private Byte id;
+    private Integer id;
 
-    private Byte userid;
+    private Integer userid;
 
     private String receivername;
 
@@ -27,7 +27,7 @@ public class Shipping {
 
     private Date updatetime;
 
-    public Shipping(Byte id, Byte userid, String receivername, String receiverphone, String receivermobile, String receiverprovince, String receivercity, String receiverdistrict, String receiveraddress, String receiverzip, Date createtime, Date updatetime) {
+    public Shipping(Integer id, Integer userid, String receivername, String receiverphone, String receivermobile, String receiverprovince, String receivercity, String receiverdistrict, String receiveraddress, String receiverzip, Date createtime, Date updatetime) {
         this.id = id;
         this.userid = userid;
         this.receivername = receivername;
@@ -46,19 +46,19 @@ public class Shipping {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Byte getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Byte userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 

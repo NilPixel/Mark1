@@ -3,6 +3,794 @@
 <mapper namespace="com.starkindustries.dao.OrderMapper">
   <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
     <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="shippingId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payment" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="paymentType" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="postage" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paymentTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="sendTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="closeTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, orderNo, userId, shippingId, payment, paymentType, postage, status, paymentTime, 
+    sendTime, endTime, closeTime, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (id, orderNo, userId, 
+      shippingId, payment, paymentType, 
+      postage, status, paymentTime, 
+      sendTime, endTime, closeTime, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{orderno,jdbcType=BIGINT}, #{userid,jdbcType=INTEGER}, 
+      #{shippingid,jdbcType=INTEGER}, #{payment,jdbcType=DECIMAL}, #{paymenttype,jdbcType=INTEGER}, 
+      #{postage,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{paymenttime,jdbcType=DATE}, 
+      #{sendtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{closetime,jdbcType=DATE}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="shippingid != null">
+        shippingId,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="paymenttype != null">
+        paymentType,
+      </if>
+      <if test="postage != null">
+        postage,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="closetime != null">
+        closeTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    <set>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        shippingId = #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        paymentType = #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        postage = #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        closeTime = #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    set orderNo = #{orderno,jdbcType=BIGINT},
+      userId = #{userid,jdbcType=INTEGER},
+      shippingId = #{shippingid,jdbcType=INTEGER},
+      payment = #{payment,jdbcType=DECIMAL},
+      paymentType = #{paymenttype,jdbcType=INTEGER},
+      postage = #{postage,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      paymentTime = #{paymenttime,jdbcType=DATE},
+      sendTime = #{sendtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      closeTime = #{closetime,jdbcType=DATE},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Long" jdbcType="BIGINT" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="shippingId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payment" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="paymentType" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="postage" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paymentTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="sendTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="closeTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, orderNo, userId, shippingId, payment, paymentType, postage, status, paymentTime, 
+    sendTime, endTime, closeTime, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (id, orderNo, userId, 
+      shippingId, payment, paymentType, 
+      postage, status, paymentTime, 
+      sendTime, endTime, closeTime, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{orderno,jdbcType=BIGINT}, #{userid,jdbcType=INTEGER}, 
+      #{shippingid,jdbcType=INTEGER}, #{payment,jdbcType=DECIMAL}, #{paymenttype,jdbcType=INTEGER}, 
+      #{postage,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{paymenttime,jdbcType=DATE}, 
+      #{sendtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{closetime,jdbcType=DATE}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="shippingid != null">
+        shippingId,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="paymenttype != null">
+        paymentType,
+      </if>
+      <if test="postage != null">
+        postage,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="closetime != null">
+        closeTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    <set>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=BIGINT},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        shippingId = #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        paymentType = #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        postage = #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        closeTime = #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    set orderNo = #{orderno,jdbcType=BIGINT},
+      userId = #{userid,jdbcType=INTEGER},
+      shippingId = #{shippingid,jdbcType=INTEGER},
+      payment = #{payment,jdbcType=DECIMAL},
+      paymentType = #{paymenttype,jdbcType=INTEGER},
+      postage = #{postage,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      paymentTime = #{paymenttime,jdbcType=DATE},
+      sendTime = #{sendtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      closeTime = #{closetime,jdbcType=DATE},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="shippingId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payment" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="paymentType" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="postage" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paymentTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="sendTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="closeTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, orderNo, userId, shippingId, payment, paymentType, postage, status, paymentTime, 
+    sendTime, endTime, closeTime, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (id, orderNo, userId, 
+      shippingId, payment, paymentType, 
+      postage, status, paymentTime, 
+      sendTime, endTime, closeTime, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{orderno,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{shippingid,jdbcType=INTEGER}, #{payment,jdbcType=DECIMAL}, #{paymenttype,jdbcType=INTEGER}, 
+      #{postage,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{paymenttime,jdbcType=DATE}, 
+      #{sendtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{closetime,jdbcType=DATE}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="shippingid != null">
+        shippingId,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="paymenttype != null">
+        paymentType,
+      </if>
+      <if test="postage != null">
+        postage,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="closetime != null">
+        closeTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    <set>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        shippingId = #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        paymentType = #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        postage = #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        closeTime = #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    set orderNo = #{orderno,jdbcType=INTEGER},
+      userId = #{userid,jdbcType=INTEGER},
+      shippingId = #{shippingid,jdbcType=INTEGER},
+      payment = #{payment,jdbcType=DECIMAL},
+      paymentType = #{paymenttype,jdbcType=INTEGER},
+      postage = #{postage,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      paymentTime = #{paymenttime,jdbcType=DATE},
+      sendTime = #{sendtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      closeTime = #{closetime,jdbcType=DATE},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="userId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="shippingId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="payment" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="paymentType" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="postage" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="status" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="paymentTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="sendTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="endTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="closeTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="createTime" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="updateTime" javaType="java.util.Date" jdbcType="DATE" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, orderNo, userId, shippingId, payment, paymentType, postage, status, paymentTime, 
+    sendTime, endTime, closeTime, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mark_one_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order (id, orderNo, userId, 
+      shippingId, payment, paymentType, 
+      postage, status, paymentTime, 
+      sendTime, endTime, closeTime, 
+      createTime, updateTime)
+    values (#{id,jdbcType=INTEGER}, #{orderno,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, 
+      #{shippingid,jdbcType=INTEGER}, #{payment,jdbcType=DECIMAL}, #{paymenttype,jdbcType=INTEGER}, 
+      #{postage,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{paymenttime,jdbcType=DATE}, 
+      #{sendtime,jdbcType=DATE}, #{endtime,jdbcType=DATE}, #{closetime,jdbcType=DATE}, 
+      #{createtime,jdbcType=DATE}, #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.starkindustries.pojo.Order">
+    insert into mark_one_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderno != null">
+        orderNo,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="shippingid != null">
+        shippingId,
+      </if>
+      <if test="payment != null">
+        payment,
+      </if>
+      <if test="paymenttype != null">
+        paymentType,
+      </if>
+      <if test="postage != null">
+        postage,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="paymenttime != null">
+        paymentTime,
+      </if>
+      <if test="sendtime != null">
+        sendTime,
+      </if>
+      <if test="endtime != null">
+        endTime,
+      </if>
+      <if test="closetime != null">
+        closeTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderno != null">
+        #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    <set>
+      <if test="orderno != null">
+        orderNo = #{orderno,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="shippingid != null">
+        shippingId = #{shippingid,jdbcType=INTEGER},
+      </if>
+      <if test="payment != null">
+        payment = #{payment,jdbcType=DECIMAL},
+      </if>
+      <if test="paymenttype != null">
+        paymentType = #{paymenttype,jdbcType=INTEGER},
+      </if>
+      <if test="postage != null">
+        postage = #{postage,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="paymenttime != null">
+        paymentTime = #{paymenttime,jdbcType=DATE},
+      </if>
+      <if test="sendtime != null">
+        sendTime = #{sendtime,jdbcType=DATE},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=DATE},
+      </if>
+      <if test="closetime != null">
+        closeTime = #{closetime,jdbcType=DATE},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.Order">
+    update mark_one_order
+    set orderNo = #{orderno,jdbcType=INTEGER},
+      userId = #{userid,jdbcType=INTEGER},
+      shippingId = #{shippingid,jdbcType=INTEGER},
+      payment = #{payment,jdbcType=DECIMAL},
+      paymentType = #{paymenttype,jdbcType=INTEGER},
+      postage = #{postage,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      paymentTime = #{paymenttime,jdbcType=DATE},
+      sendTime = #{sendtime,jdbcType=DATE},
+      endTime = #{endtime,jdbcType=DATE},
+      closeTime = #{closetime,jdbcType=DATE},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.starkindustries.pojo.Order">
+    <constructor>
       <idArg column="id" javaType="java.lang.Byte" jdbcType="TINYINT" />
       <arg column="orderNo" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="userId" javaType="java.lang.Byte" jdbcType="TINYINT" />

@@ -3,13 +3,13 @@ package com.starkindustries.dao;
 import com.starkindustries.pojo.Category;
 
 public interface CategoryMapper {
-    int deleteByPrimaryKey(Byte id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Category record);
 
     int insertSelective(Category record);
 
-    Category selectByPrimaryKey(Byte id);
+    Category selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Category record);
 

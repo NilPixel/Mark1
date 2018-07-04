@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderItem {
-    private Byte id;
+    private Integer id;
 
-    private Byte userid;
+    private Integer userid;
 
     private Integer orderno;
 
-    private Byte productid;
+    private Integer productid;
 
     private String productname;
 
@@ -18,7 +18,7 @@ public class OrderItem {
 
     private BigDecimal currentunitprice;
 
-    private Byte quantity;
+    private Integer quantity;
 
     private BigDecimal totalprice;
 
@@ -26,7 +26,7 @@ public class OrderItem {
 
     private Date updatetime;
 
-    public OrderItem(Byte id, Byte userid, Integer orderno, Byte productid, String productname, String productimage, BigDecimal currentunitprice, Byte quantity, BigDecimal totalprice, Date createtime, Date updatetime) {
+    public OrderItem(Integer id, Integer userid, Integer orderno, Integer productid, String productname, String productimage, BigDecimal currentunitprice, Integer quantity, BigDecimal totalprice, Date createtime, Date updatetime) {
         this.id = id;
         this.userid = userid;
         this.orderno = orderno;
@@ -44,19 +44,19 @@ public class OrderItem {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Byte getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Byte userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
@@ -68,11 +68,11 @@ public class OrderItem {
         this.orderno = orderno;
     }
 
-    public Byte getProductid() {
+    public Integer getProductid() {
         return productid;
     }
 
-    public void setProductid(Byte productid) {
+    public void setProductid(Integer productid) {
         this.productid = productid;
     }
 
@@ -100,11 +100,11 @@ public class OrderItem {
         this.currentunitprice = currentunitprice;
     }
 
-    public Byte getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Byte quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

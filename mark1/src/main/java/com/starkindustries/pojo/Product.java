@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Product {
-    private Byte id;
+    private Integer id;
 
     private String detail;
 
     private String subImages;
 
-    private Byte categoryid;
+    private Integer categoryid;
 
     private String name;
 
@@ -20,15 +20,15 @@ public class Product {
 
     private BigDecimal price;
 
-    private Byte stock;
+    private Integer stock;
 
-    private Byte status;
+    private Integer status;
 
     private Date createtime;
 
     private Date updatetime;
 
-    public Product(Byte id, String detail, String subImages, Byte categoryid, String name, String subtitle, String mainimage, BigDecimal price, Byte stock, Byte status, Date createtime, Date updatetime) {
+    public Product(Integer id, String detail, String subImages, Integer categoryid, String name, String subtitle, String mainimage, BigDecimal price, Integer stock, Integer status, Date createtime, Date updatetime) {
         this.id = id;
         this.detail = detail;
         this.subImages = subImages;
@@ -47,11 +47,11 @@ public class Product {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -71,11 +71,11 @@ public class Product {
         this.subImages = subImages == null ? null : subImages.trim();
     }
 
-    public Byte getCategoryid() {
+    public Integer getCategoryid() {
         return categoryid;
     }
 
-    public void setCategoryid(Byte categoryid) {
+    public void setCategoryid(Integer categoryid) {
         this.categoryid = categoryid;
     }
 
@@ -111,19 +111,19 @@ public class Product {
         this.price = price;
     }
 
-    public Byte getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(Byte stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
-    public Byte getStatus() {
+    public Integer getStatus() {
         return status;
     }
 
-    public void setStatus(Byte status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 

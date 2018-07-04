@@ -3,13 +3,13 @@ package com.starkindustries.pojo;
 import java.util.Date;
 
 public class PayInfo {
-    private Byte id;
+    private Integer id;
 
-    private Byte userid;
+    private Integer userid;
 
-    private Integer orderno;
+    private Long orderno;
 
-    private Byte payplatform;
+    private Integer payplatform;
 
     private String platformnumber;
 
@@ -19,7 +19,7 @@ public class PayInfo {
 
     private Date updatetime;
 
-    public PayInfo(Byte id, Byte userid, Integer orderno, Byte payplatform, String platformnumber, String platformstatus, Date createtime, Date updatetime) {
+    public PayInfo(Integer id, Integer userid, Long orderno, Integer payplatform, String platformnumber, String platformstatus, Date createtime, Date updatetime) {
         this.id = id;
         this.userid = userid;
         this.orderno = orderno;
@@ -34,35 +34,35 @@ public class PayInfo {
         super();
     }
 
-    public Byte getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Byte id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Byte getUserid() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setUserid(Byte userid) {
+    public void setUserid(Integer userid) {
         this.userid = userid;
     }
 
-    public Integer getOrderno() {
+    public Long getOrderno() {
         return orderno;
     }
 
-    public void setOrderno(Integer orderno) {
+    public void setOrderno(Long orderno) {
         this.orderno = orderno;
     }
 
-    public Byte getPayplatform() {
+    public Integer getPayplatform() {
         return payplatform;
     }
 
-    public void setPayplatform(Byte payplatform) {
+    public void setPayplatform(Integer payplatform) {
         this.payplatform = payplatform;
     }
 

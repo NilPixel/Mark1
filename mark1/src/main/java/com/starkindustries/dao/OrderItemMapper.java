@@ -3,13 +3,13 @@ package com.starkindustries.dao;
 import com.starkindustries.pojo.OrderItem;
 
 public interface OrderItemMapper {
-    int deleteByPrimaryKey(Byte id);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(OrderItem record);
 
     int insertSelective(OrderItem record);
 
-    OrderItem selectByPrimaryKey(Byte id);
+    OrderItem selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(OrderItem record);
 
