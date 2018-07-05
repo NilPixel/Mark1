@@ -5,7 +5,7 @@ import java.util.Date;
 public class User {
     private Integer id;
 
-    private String username;
+    private String userName;
 
     private String password;
 
@@ -19,21 +19,21 @@ public class User {
 
     private Integer role;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public User(Integer id, String username, String password, String email, String phone, String question, String answer, Integer role, Date createtime, Date updatetime) {
+    public User(Integer id, String userName, String password, String email, String phone, String question, String answer, Integer role, Date createTime, Date updateTime) {
         this.id = id;
-        this.username = username;
+        this.userName = userName;
         this.password = password;
         this.email = email;
         this.phone = phone;
         this.question = question;
         this.answer = answer;
         this.role = role;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public User() {
@@ -48,12 +48,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
     }
 
     public String getPassword() {
@@ -104,19 +104,19 @@ public class User {
         this.role = role;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

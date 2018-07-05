@@ -10,13 +10,13 @@ public class Product {
 
     private String subImages;
 
-    private Integer categoryid;
+    private Integer categoryId;
 
     private String name;
 
     private String subtitle;
 
-    private String mainimage;
+    private String mainImage;
 
     private BigDecimal price;
 
@@ -24,23 +24,23 @@ public class Product {
 
     private Integer status;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public Product(Integer id, String detail, String subImages, Integer categoryid, String name, String subtitle, String mainimage, BigDecimal price, Integer stock, Integer status, Date createtime, Date updatetime) {
+    public Product(Integer id, String detail, String subImages, Integer categoryId, String name, String subtitle, String mainImage, BigDecimal price, Integer stock, Integer status, Date createTime, Date updateTime) {
         this.id = id;
         this.detail = detail;
         this.subImages = subImages;
-        this.categoryid = categoryid;
+        this.categoryId = categoryId;
         this.name = name;
         this.subtitle = subtitle;
-        this.mainimage = mainimage;
+        this.mainImage = mainImage;
         this.price = price;
         this.stock = stock;
         this.status = status;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Product() {
@@ -71,12 +71,12 @@ public class Product {
         this.subImages = subImages == null ? null : subImages.trim();
     }
 
-    public Integer getCategoryid() {
-        return categoryid;
+    public Integer getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategoryid(Integer categoryid) {
-        this.categoryid = categoryid;
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -95,12 +95,12 @@ public class Product {
         this.subtitle = subtitle == null ? null : subtitle.trim();
     }
 
-    public String getMainimage() {
-        return mainimage;
+    public String getMainImage() {
+        return mainImage;
     }
 
-    public void setMainimage(String mainimage) {
-        this.mainimage = mainimage == null ? null : mainimage.trim();
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage == null ? null : mainImage.trim();
     }
 
     public BigDecimal getPrice() {
@@ -127,19 +127,19 @@ public class Product {
         this.status = status;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

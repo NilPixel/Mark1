@@ -6,47 +6,47 @@ import java.util.Date;
 public class Order {
     private Integer id;
 
-    private Long orderno;
+    private Long orderNo;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Integer shippingid;
+    private Integer shippingId;
 
     private BigDecimal payment;
 
-    private Integer paymenttype;
+    private Integer paymentType;
 
     private Integer postage;
 
     private Integer status;
 
-    private Date paymenttime;
+    private Date paymentTime;
 
-    private Date sendtime;
+    private Date sendTime;
 
-    private Date endtime;
+    private Date endTime;
 
-    private Date closetime;
+    private Date closeTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public Order(Integer id, Long orderno, Integer userid, Integer shippingid, BigDecimal payment, Integer paymenttype, Integer postage, Integer status, Date paymenttime, Date sendtime, Date endtime, Date closetime, Date createtime, Date updatetime) {
+    public Order(Integer id, Long orderNo, Integer userId, Integer shippingId, BigDecimal payment, Integer paymentType, Integer postage, Integer status, Date paymentTime, Date sendTime, Date endTime, Date closeTime, Date createTime, Date updateTime) {
         this.id = id;
-        this.orderno = orderno;
-        this.userid = userid;
-        this.shippingid = shippingid;
+        this.orderNo = orderNo;
+        this.userId = userId;
+        this.shippingId = shippingId;
         this.payment = payment;
-        this.paymenttype = paymenttype;
+        this.paymentType = paymentType;
         this.postage = postage;
         this.status = status;
-        this.paymenttime = paymenttime;
-        this.sendtime = sendtime;
-        this.endtime = endtime;
-        this.closetime = closetime;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.paymentTime = paymentTime;
+        this.sendTime = sendTime;
+        this.endTime = endTime;
+        this.closeTime = closeTime;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Order() {
@@ -61,28 +61,28 @@ public class Order {
         this.id = id;
     }
 
-    public Long getOrderno() {
-        return orderno;
+    public Long getOrderNo() {
+        return orderNo;
     }
 
-    public void setOrderno(Long orderno) {
-        this.orderno = orderno;
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getShippingid() {
-        return shippingid;
+    public Integer getShippingId() {
+        return shippingId;
     }
 
-    public void setShippingid(Integer shippingid) {
-        this.shippingid = shippingid;
+    public void setShippingId(Integer shippingId) {
+        this.shippingId = shippingId;
     }
 
     public BigDecimal getPayment() {
@@ -93,12 +93,12 @@ public class Order {
         this.payment = payment;
     }
 
-    public Integer getPaymenttype() {
-        return paymenttype;
+    public Integer getPaymentType() {
+        return paymentType;
     }
 
-    public void setPaymenttype(Integer paymenttype) {
-        this.paymenttype = paymenttype;
+    public void setPaymentType(Integer paymentType) {
+        this.paymentType = paymentType;
     }
 
     public Integer getPostage() {
@@ -117,51 +117,51 @@ public class Order {
         this.status = status;
     }
 
-    public Date getPaymenttime() {
-        return paymenttime;
+    public Date getPaymentTime() {
+        return paymentTime;
     }
 
-    public void setPaymenttime(Date paymenttime) {
-        this.paymenttime = paymenttime;
+    public void setPaymentTime(Date paymentTime) {
+        this.paymentTime = paymentTime;
     }
 
-    public Date getSendtime() {
-        return sendtime;
+    public Date getSendTime() {
+        return sendTime;
     }
 
-    public void setSendtime(Date sendtime) {
-        this.sendtime = sendtime;
+    public void setSendTime(Date sendTime) {
+        this.sendTime = sendTime;
     }
 
-    public Date getEndtime() {
-        return endtime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtime(Date endtime) {
-        this.endtime = endtime;
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
     }
 
-    public Date getClosetime() {
-        return closetime;
+    public Date getCloseTime() {
+        return closeTime;
     }
 
-    public void setClosetime(Date closetime) {
-        this.closetime = closetime;
+    public void setCloseTime(Date closeTime) {
+        this.closeTime = closeTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

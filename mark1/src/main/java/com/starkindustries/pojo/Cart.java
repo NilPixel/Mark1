@@ -5,26 +5,26 @@ import java.util.Date;
 public class Cart {
     private Integer id;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Integer productid;
+    private Integer productId;
 
     private Integer quantity;
 
     private Integer checked;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public Cart(Integer id, Integer userid, Integer productid, Integer quantity, Integer checked, Date createtime, Date updatetime) {
+    public Cart(Integer id, Integer userId, Integer productId, Integer quantity, Integer checked, Date createTime, Date updateTime) {
         this.id = id;
-        this.userid = userid;
-        this.productid = productid;
+        this.userId = userId;
+        this.productId = productId;
         this.quantity = quantity;
         this.checked = checked;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Cart() {
@@ -39,20 +39,20 @@ public class Cart {
         this.id = id;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getProductid() {
-        return productid;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProductid(Integer productid) {
-        this.productid = productid;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public Integer getQuantity() {
@@ -71,19 +71,19 @@ public class Cart {
         this.checked = checked;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

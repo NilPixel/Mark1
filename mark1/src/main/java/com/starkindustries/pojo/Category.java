@@ -5,26 +5,26 @@ import java.util.Date;
 public class Category {
     private Integer id;
 
-    private Integer parentid;
+    private Integer parentId;
 
     private String name;
 
     private byte[] status;
 
-    private Integer sortorder;
+    private Integer sortOrder;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public Category(Integer id, Integer parentid, String name, byte[] status, Integer sortorder, Date createtime, Date updatetime) {
+    public Category(Integer id, Integer parentId, String name, byte[] status, Integer sortOrder, Date createTime, Date updateTime) {
         this.id = id;
-        this.parentid = parentid;
+        this.parentId = parentId;
         this.name = name;
         this.status = status;
-        this.sortorder = sortorder;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.sortOrder = sortOrder;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public Category() {
@@ -39,12 +39,12 @@ public class Category {
         this.id = id;
     }
 
-    public Integer getParentid() {
-        return parentid;
+    public Integer getParentId() {
+        return parentId;
     }
 
-    public void setParentid(Integer parentid) {
-        this.parentid = parentid;
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
     }
 
     public String getName() {
@@ -63,27 +63,27 @@ public class Category {
         this.status = status;
     }
 
-    public Integer getSortorder() {
-        return sortorder;
+    public Integer getSortOrder() {
+        return sortOrder;
     }
 
-    public void setSortorder(Integer sortorder) {
-        this.sortorder = sortorder;
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

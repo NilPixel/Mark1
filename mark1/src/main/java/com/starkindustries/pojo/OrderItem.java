@@ -6,38 +6,38 @@ import java.util.Date;
 public class OrderItem {
     private Integer id;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Integer orderno;
+    private Integer orderNo;
 
-    private Integer productid;
+    private Integer productId;
 
-    private String productname;
+    private String productName;
 
-    private String productimage;
+    private String productImage;
 
-    private BigDecimal currentunitprice;
+    private BigDecimal currentUnitPrice;
 
     private Integer quantity;
 
-    private BigDecimal totalprice;
+    private BigDecimal totalPrice;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public OrderItem(Integer id, Integer userid, Integer orderno, Integer productid, String productname, String productimage, BigDecimal currentunitprice, Integer quantity, BigDecimal totalprice, Date createtime, Date updatetime) {
+    public OrderItem(Integer id, Integer userId, Integer orderNo, Integer productId, String productName, String productImage, BigDecimal currentUnitPrice, Integer quantity, BigDecimal totalPrice, Date createTime, Date updateTime) {
         this.id = id;
-        this.userid = userid;
-        this.orderno = orderno;
-        this.productid = productid;
-        this.productname = productname;
-        this.productimage = productimage;
-        this.currentunitprice = currentunitprice;
+        this.userId = userId;
+        this.orderNo = orderNo;
+        this.productId = productId;
+        this.productName = productName;
+        this.productImage = productImage;
+        this.currentUnitPrice = currentUnitPrice;
         this.quantity = quantity;
-        this.totalprice = totalprice;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.totalPrice = totalPrice;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public OrderItem() {
@@ -52,52 +52,52 @@ public class OrderItem {
         this.id = id;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getOrderno() {
-        return orderno;
+    public Integer getOrderNo() {
+        return orderNo;
     }
 
-    public void setOrderno(Integer orderno) {
-        this.orderno = orderno;
+    public void setOrderNo(Integer orderNo) {
+        this.orderNo = orderNo;
     }
 
-    public Integer getProductid() {
-        return productid;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProductid(Integer productid) {
-        this.productid = productid;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
-    public String getProductname() {
-        return productname;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProductname(String productname) {
-        this.productname = productname == null ? null : productname.trim();
+    public void setProductName(String productName) {
+        this.productName = productName == null ? null : productName.trim();
     }
 
-    public String getProductimage() {
-        return productimage;
+    public String getProductImage() {
+        return productImage;
     }
 
-    public void setProductimage(String productimage) {
-        this.productimage = productimage == null ? null : productimage.trim();
+    public void setProductImage(String productImage) {
+        this.productImage = productImage == null ? null : productImage.trim();
     }
 
-    public BigDecimal getCurrentunitprice() {
-        return currentunitprice;
+    public BigDecimal getCurrentUnitPrice() {
+        return currentUnitPrice;
     }
 
-    public void setCurrentunitprice(BigDecimal currentunitprice) {
-        this.currentunitprice = currentunitprice;
+    public void setCurrentUnitPrice(BigDecimal currentUnitPrice) {
+        this.currentUnitPrice = currentUnitPrice;
     }
 
     public Integer getQuantity() {
@@ -108,27 +108,27 @@ public class OrderItem {
         this.quantity = quantity;
     }
 
-    public BigDecimal getTotalprice() {
-        return totalprice;
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalprice(BigDecimal totalprice) {
-        this.totalprice = totalprice;
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }

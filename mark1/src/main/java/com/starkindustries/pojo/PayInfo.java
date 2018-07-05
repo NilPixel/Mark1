@@ -5,29 +5,29 @@ import java.util.Date;
 public class PayInfo {
     private Integer id;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Long orderno;
+    private Long orderNo;
 
-    private Integer payplatform;
+    private Integer payPlatform;
 
-    private String platformnumber;
+    private String platformNumber;
 
-    private String platformstatus;
+    private String platformStatus;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Date updatetime;
+    private Date updateTime;
 
-    public PayInfo(Integer id, Integer userid, Long orderno, Integer payplatform, String platformnumber, String platformstatus, Date createtime, Date updatetime) {
+    public PayInfo(Integer id, Integer userId, Long orderNo, Integer payPlatform, String platformNumber, String platformStatus, Date createTime, Date updateTime) {
         this.id = id;
-        this.userid = userid;
-        this.orderno = orderno;
-        this.payplatform = payplatform;
-        this.platformnumber = platformnumber;
-        this.platformstatus = platformstatus;
-        this.createtime = createtime;
-        this.updatetime = updatetime;
+        this.userId = userId;
+        this.orderNo = orderNo;
+        this.payPlatform = payPlatform;
+        this.platformNumber = platformNumber;
+        this.platformStatus = platformStatus;
+        this.createTime = createTime;
+        this.updateTime = updateTime;
     }
 
     public PayInfo() {
@@ -42,59 +42,59 @@ public class PayInfo {
         this.id = id;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Long getOrderno() {
-        return orderno;
+    public Long getOrderNo() {
+        return orderNo;
     }
 
-    public void setOrderno(Long orderno) {
-        this.orderno = orderno;
+    public void setOrderNo(Long orderNo) {
+        this.orderNo = orderNo;
     }
 
-    public Integer getPayplatform() {
-        return payplatform;
+    public Integer getPayPlatform() {
+        return payPlatform;
     }
 
-    public void setPayplatform(Integer payplatform) {
-        this.payplatform = payplatform;
+    public void setPayPlatform(Integer payPlatform) {
+        this.payPlatform = payPlatform;
     }
 
-    public String getPlatformnumber() {
-        return platformnumber;
+    public String getPlatformNumber() {
+        return platformNumber;
     }
 
-    public void setPlatformnumber(String platformnumber) {
-        this.platformnumber = platformnumber == null ? null : platformnumber.trim();
+    public void setPlatformNumber(String platformNumber) {
+        this.platformNumber = platformNumber == null ? null : platformNumber.trim();
     }
 
-    public String getPlatformstatus() {
-        return platformstatus;
+    public String getPlatformStatus() {
+        return platformStatus;
     }
 
-    public void setPlatformstatus(String platformstatus) {
-        this.platformstatus = platformstatus == null ? null : platformstatus.trim();
+    public void setPlatformStatus(String platformStatus) {
+        this.platformStatus = platformStatus == null ? null : platformStatus.trim();
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Date getUpdatetime() {
-        return updatetime;
+    public Date getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
     }
 }
