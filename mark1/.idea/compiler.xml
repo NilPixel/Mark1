@@ -10,5 +10,8 @@
         <module name="mark1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jarvis" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
