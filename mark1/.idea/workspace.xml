@@ -7,16 +7,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a44d95-278b-4933-a9a2-39f76c86481f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mark1.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/common/Const.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/common/ResponseCode.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/common/ServerResponse.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/controller/portal/UserController.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/service/IUserService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/UserServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/datasource.properties" afterPath="$PROJECT_DIR$/src/main/resources/datasource.properties" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datasource.properties" afterPath="$PROJECT_DIR$/target/classes/datasource.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CartMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CartMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CategoryMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/CategoryMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/OrderItemMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderItemMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/PayInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/PayInfoMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/ShippingMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/ShippingMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/CartMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/CategoryMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/OrderItemMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/OrderMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/PayInfoMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/ProductMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/ShippingMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/UserMapper.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/Cart.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/Category.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/Order.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/OrderItem.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/PayInfo.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/Product.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/Shipping.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/pojo/User.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/CartMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/CartMapper.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/CategoryMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/CategoryMapper.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/OrderItemMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/OrderItemMapper.xml" />
@@ -54,123 +77,206 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/controller/portal/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext-datasource.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+            <state relative-caret-position="274">
+              <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
               <folding>
-                <element signature="e#1559#1582#0" expanded="true" />
-                <element signature="e#1620#1631#0" expanded="true" />
-                <element signature="e#1674#1690#0" expanded="true" />
-                <element signature="e#1733#1749#0" expanded="true" />
-                <element signature="e#1823#1842#0" expanded="true" />
-                <element signature="e#1911#1928#0" expanded="true" />
-                <element signature="e#2043#2058#0" expanded="true" />
-                <element signature="e#2162#2177#0" expanded="true" />
-                <element signature="e#2270#2285#0" expanded="true" />
-                <element signature="e#2447#2472#0" expanded="true" />
-                <element signature="e#2789#2823#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SqlSessionFactoryBean.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis-spring/1.3.0/mybatis-spring-1.3.0-sources.jar!/org/mybatis/spring/SqlSessionFactoryBean.java">
+      <file leaf-file-name="Const.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/Const.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="76" column="13" lean-forward="false" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
+            <state relative-caret-position="51">
+              <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datasource.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
+      <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/IUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="85">
+              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="1883" column="11" lean-forward="false" selection-start-line="1883" selection-start-column="11" selection-end-line="1883" selection-end-column="11" />
+              <folding>
+                <marker date="1531212339451" expanded="true" signature="1336:1445" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="1531:1594" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="1680:2138" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="3952:4877" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="4975:5447" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="6595:6704" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="6790:6853" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="6939:7398" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="9213:10139" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="10237:10710" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="11858:11967" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="12053:12116" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="12202:12661" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="14476:15402" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="15500:15973" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="17111:17220" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="17306:17369" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="17455:17904" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="19709:20625" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="20723:21186" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="22324:22433" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="22519:22582" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="22668:23117" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="24922:25838" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="25936:26399" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="27537:27646" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="27732:27795" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="27881:28330" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="30135:31051" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="31149:31612" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="32744:32853" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="32939:33002" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="33088:33534" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="35336:36249" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="36347:36807" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="37939:38048" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="38134:38197" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="38283:38729" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="40531:41444" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="41542:42002" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="43134:43243" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="43329:43392" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="43478:43924" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="45726:46639" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="46737:47197" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="48329:48438" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="48524:48587" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="48673:49119" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="50921:51834" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="51932:52392" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="53524:53633" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="53719:53782" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="53868:54314" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="56116:57029" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="57127:57587" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="58710:58819" ph="select from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="58902:58965" ph="delete from mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="59051:59497" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="61299:62212" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="62310:62770" ph="update mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="63053:63123" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="63797:63867" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="64541:64611" ph="insert into mark_one_user... " />
+                <marker date="1531212339451" expanded="true" signature="65095:65164" ph="SELECT COUNT... mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="65259:65340" ph="SELECT from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="65259:65362" ph="SELECT from mark_one_user" />
+                <marker date="1531212339451" expanded="true" signature="65259:65393" ph="SELECT from mark_one_user" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestingUserName.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/javax/print/attribute/standard/RequestingUserName.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="54" column="19" lean-forward="false" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartMapper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/CartMapper.java">
+      <file leaf-file-name="JobOriginatingUserName.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/javax/print/attribute/standard/JobOriginatingUserName.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+            <state relative-caret-position="205">
+              <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dispatcher-servlet.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="486">
+              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding>
+                <element signature="e#1050#1051#0" expanded="true" />
+                <element signature="e#1081#1082#0" expanded="true" />
+                <element signature="e#1129#1130#0" expanded="true" />
+                <element signature="e#1202#1203#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mark1.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mark1.properties">
+      <file leaf-file-name="ResponseCode.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/ResponseCode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logback.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServletRequestListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-servlet-api/7.0.88/tomcat-servlet-api-7.0.88-sources.jar!/javax/servlet/ServletRequestListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+              <folding>
+                <element signature="e#382#383#0" expanded="true" />
+                <element signature="e#409#410#0" expanded="true" />
+                <element signature="e#440#441#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>insert</find>
+      <find>ServiceResponse</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,6 +299,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/CartMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/common/ResponseCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/common/ServiceResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/common/ServerResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/service/IUserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/controller/portal/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/common/Const.java" />
       </list>
     </option>
   </component>
@@ -245,8 +360,8 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="634" />
     <option name="y" value="23" />
     <option name="width" value="1398" />
     <option name="height" value="877" />
@@ -259,13 +374,64 @@
             <id />
           </State>
           <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness &gt; Messages</id>
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Performance</id>
+          </State>
+          <State>
+            <id>Android Lint for Kotlin</id>
+          </State>
+          <State>
             <id>CodeSpring CoreSpring</id>
+          </State>
+          <State>
+            <id>CorrectnessLintAndroid</id>
+          </State>
+          <State>
+            <id>GSPGrailsGroovy</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GrailsGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>LintAndroid</id>
+          </State>
+          <State>
+            <id>Maven</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
           </State>
           <State>
             <id>Spring</id>
           </State>
           <State>
             <id>Spring CoreSpring</id>
+          </State>
+          <State>
+            <id>XPath</id>
           </State>
         </expanded-state>
         <selected-state>
@@ -294,9 +460,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -348,6 +515,24 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="starkindustries" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mark1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="starkindustries" type="462c0819:PsiDirectoryNode" />
+              <item name="portal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mark1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="starkindustries" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -364,7 +549,34 @@
               <item name="mark1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="starkindustries" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mark1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="starkindustries" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mark1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mark1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mark1" type="b2602c69:ProjectViewProjectNode" />
@@ -385,7 +597,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,7 +606,8 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="SearchEverywhereHistoryKey" value="userName&#9;PSI&#9;JAVA://com.starkindustries.pojo.User#setUsername" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -582,12 +794,16 @@
       <workItem from="1530959735259" duration="1589000" />
       <workItem from="1530968275054" duration="467000" />
       <workItem from="1530968893265" duration="31000" />
-      <workItem from="1531035497263" duration="3013000" />
+      <workItem from="1531035497263" duration="3630000" />
+      <workItem from="1531142343607" duration="3290000" />
+      <workItem from="1531209604193" duration="554000" />
+      <workItem from="1531210165960" duration="306000" />
+      <workItem from="1531210492018" duration="2698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27339000" />
+    <option name="totallyTimeSpent" value="34804000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,7 +815,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="23" width="1398" height="877" extended-state="0" />
+    <frame x="42" y="23" width="1398" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -608,12 +824,14 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20648968" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3286445" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2423077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -622,19 +840,17 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948717" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18158568" sideWeight="0.49557522" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23967552" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25442478" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23273657" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,69 +864,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="83" column="23" lean-forward="true" selection-start-line="83" selection-start-column="23" selection-end-line="83" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1394">
-          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/datasource.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -760,13 +913,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="28" lean-forward="false" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Shipping.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -806,13 +952,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
           <caret line="66" column="50" lean-forward="false" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -877,78 +1016,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Cart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/CartMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4114">
           <caret line="242" column="18" lean-forward="false" selection-start-line="242" selection-start-column="18" selection-end-line="242" selection-end-column="18" />
-          <folding>
-            <marker date="1530962998051" expanded="true" signature="1096:1205" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="1291:1354" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="1440:1786" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="3192:3861" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="3959:4312" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="5218:5327" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="5413:5476" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="5562:5908" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="7314:7983" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="8081:8434" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="9340:9449" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="9535:9598" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="9684:10030" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="11436:12105" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="12203:12556" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="13462:13571" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="13657:13720" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="13806:14152" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="15558:16227" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="16325:16678" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="17574:17683" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="17769:17832" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="17918:18209" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="19561:20198" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="20296:20617" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="21505:21614" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="21700:21763" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="21849:22136" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="23484:24117" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="24215:24532" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="25420:25529" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="25615:25678" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="25764:26051" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="27399:28032" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="28130:28447" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="29335:29444" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="29530:29593" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="29679:30011" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="31403:32058" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="32156:32495" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="33383:33492" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="33578:33641" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="33727:34059" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="35451:36106" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="36204:36543" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="37431:37540" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="37626:37689" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="37775:38107" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="39499:40154" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="40252:40591" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="41461:41570" ph="select from mark_one_cart" />
-            <marker date="1530962998051" expanded="true" signature="41653:41716" ph="delete from mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="41802:42134" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="43526:44181" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="44279:44618" ph="update mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="44901:44971" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="45645:45715" ph="insert into mark_one_cart... " />
-            <marker date="1530962998051" expanded="true" signature="46389:46459" ph="insert into mark_one_cart... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -960,27 +1031,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="1684" column="2" lean-forward="false" selection-start-line="1684" selection-start-column="2" selection-end-line="1684" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/CategoryMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -988,7 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,7 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="45" column="58" lean-forward="false" selection-start-line="45" selection-start-column="58" selection-end-line="45" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1012,13 +1064,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="459">
           <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
           <folding />
         </state>
@@ -1036,41 +1087,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis-spring/1.3.0/mybatis-spring-1.3.0-sources.jar!/org/mybatis/spring/SqlSessionFactoryBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
+        <state relative-caret-position="408">
           <caret line="76" column="13" lean-forward="false" selection-start-line="76" selection-start-column="13" selection-end-line="76" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-datasource.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="82" column="46" lean-forward="true" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
-          <folding>
-            <element signature="e#1559#1582#0" expanded="true" />
-            <element signature="e#1620#1631#0" expanded="true" />
-            <element signature="e#1674#1690#0" expanded="true" />
-            <element signature="e#1733#1749#0" expanded="true" />
-            <element signature="e#1823#1842#0" expanded="true" />
-            <element signature="e#1911#1928#0" expanded="true" />
-            <element signature="e#2043#2058#0" expanded="true" />
-            <element signature="e#2162#2177#0" expanded="true" />
-            <element signature="e#2270#2285#0" expanded="true" />
-            <element signature="e#2447#2472#0" expanded="true" />
-            <element signature="e#2789#2823#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1394">
+          <caret line="82" column="46" lean-forward="false" selection-start-line="82" selection-start-column="46" selection-end-line="82" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
+        <state relative-caret-position="493">
           <caret line="29" column="31" lean-forward="false" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
           <folding />
         </state>
@@ -1078,8 +1115,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="867">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1087,7 +1124,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/mark1.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1096,6 +1133,216 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Cart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/ServiceResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/ServerResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#465#466#0" expanded="false" />
+            <element signature="e#912#913#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="false" />
+            <element signature="e#1010#1011#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1069#1070#0" expanded="false" />
+            <element signature="e#1095#1096#0" expanded="false" />
+            <element signature="e#1121#1122#0" expanded="false" />
+            <element signature="e#1148#1149#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/ResponseCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="e#382#383#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/javax/print/attribute/standard/JobOriginatingUserName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="53" column="19" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/javax/print/attribute/standard/RequestingUserName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="54" column="19" lean-forward="false" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="e#1050#1051#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/IUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="1883" column="11" lean-forward="false" selection-start-line="1883" selection-start-column="11" selection-end-line="1883" selection-end-column="11" />
+          <folding>
+            <marker date="1531212339451" expanded="true" signature="1336:1445" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="1531:1594" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="1680:2138" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="3952:4877" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="4975:5447" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="6595:6704" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="6790:6853" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="6939:7398" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="9213:10139" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="10237:10710" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="11858:11967" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="12053:12116" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="12202:12661" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="14476:15402" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="15500:15973" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="17111:17220" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="17306:17369" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="17455:17904" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="19709:20625" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="20723:21186" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="22324:22433" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="22519:22582" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="22668:23117" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="24922:25838" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="25936:26399" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="27537:27646" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="27732:27795" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="27881:28330" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="30135:31051" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="31149:31612" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="32744:32853" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="32939:33002" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="33088:33534" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="35336:36249" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="36347:36807" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="37939:38048" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="38134:38197" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="38283:38729" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="40531:41444" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="41542:42002" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="43134:43243" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="43329:43392" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="43478:43924" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="45726:46639" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="46737:47197" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="48329:48438" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="48524:48587" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="48673:49119" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="50921:51834" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="51932:52392" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="53524:53633" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="53719:53782" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="53868:54314" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="56116:57029" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="57127:57587" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="58710:58819" ph="select from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="58902:58965" ph="delete from mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="59051:59497" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="61299:62212" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="62310:62770" ph="update mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="63053:63123" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="63797:63867" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="64541:64611" ph="insert into mark_one_user... " />
+            <marker date="1531212339451" expanded="true" signature="65095:65164" ph="SELECT COUNT... mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="65259:65340" ph="SELECT from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="65259:65362" ph="SELECT from mark_one_user" />
+            <marker date="1531212339451" expanded="true" signature="65259:65393" ph="SELECT from mark_one_user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/controller/portal/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="34" column="44" lean-forward="false" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/common/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" lean-forward="false" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
           <folding />
         </state>
       </provider>
