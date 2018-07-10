@@ -5,4 +5,8 @@ import com.starkindustries.pojo.User;
 
 public interface IUserService {
     ServerResponse<User> login(String userName, String password);
+
+    ServerResponse<String> register(User user);
+
+    ServerResponse<String> checkValid(String str, String type);
 }

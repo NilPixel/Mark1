@@ -1874,6 +1874,12 @@
     WHERE username = #{username}
 
   </select>
+
+  <select id="checkEmail" parameterType="string" resultType="int">
+    SELECT COUNT (1) FROM  mark_one_user
+    WHERE email = #{email}
+
+  </select>
   
   <select id="selectLogin" resultMap="BaseResultMap" parameterType="map">
     SELECT
