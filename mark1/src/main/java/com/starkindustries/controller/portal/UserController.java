@@ -111,4 +111,17 @@ public class UserController {
         return iUserService.checkAnswer(username, question, answer);
     }
 
+    /**
+     * 重置密码
+     * @param username
+     * @param newPassword
+     * @param forgetToken
+     * @return
+     */
+    @RequestMapping(value = "forget_reset_password.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> forgetResetPwd(String username, String newPassword, String forgetToken) {
+        return iUserService.forgetResetPassword(username, newPassword, forgetToken);
+    }
+
 }

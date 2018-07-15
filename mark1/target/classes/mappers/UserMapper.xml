@@ -1905,4 +1905,10 @@
     AND answer = #{answer}
   </select>
 
+  <update id="updatePasswordByUsername" parameterType="map">
+    UPDATE mark_one_user
+    SET password = #{newPassword}, update_time = now()
+    WHERE username = #{username}
+  </update>
+
 </mapper>
