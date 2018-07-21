@@ -202,5 +202,11 @@
     WHERE password = #{password}
     AND id = #{userId}
   </select>
+  
+  <select id="checkEmailByUserId" resultType="int" parameterType="map">
+    SELECT COUNT (1) FROM mark_one_user
+    WHERE email = #{email}
+    AND id != #{userId}
+  </select>
 
 </mapper>
