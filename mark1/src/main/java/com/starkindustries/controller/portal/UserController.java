@@ -1,6 +1,7 @@
 package com.starkindustries.controller.portal;
 
 import com.starkindustries.common.Const;
+import com.starkindustries.common.ResponseCode;
 import com.starkindustries.common.ServerResponse;
 import com.starkindustries.pojo.User;
 import com.starkindustries.service.IUserService;
@@ -171,4 +172,20 @@ public class UserController {
         }
         return response;
     }
+
+    /**
+     * 获取用户信息
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "get_information.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<User> getInformation(HttpSession session) {
+        User currentUser = (User) session.getAttribute(Const.CURRENT_USER);
+        if (currentUser == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "未登录，需要强制登录status=10");
+        }
+        return iUserService.getInformation(currentUser.getId());
+    }
+
 }
