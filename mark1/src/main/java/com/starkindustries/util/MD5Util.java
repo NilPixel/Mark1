@@ -1,7 +1,6 @@
 package com.starkindustries.util;
 
 
-
 import java.security.MessageDigest;
 
 /**
