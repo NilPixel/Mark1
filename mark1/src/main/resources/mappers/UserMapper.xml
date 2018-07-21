@@ -194,5 +194,13 @@
     SET password = #{newPassword}, update_time = now()
     WHERE username = #{username}
   </update>
+  
+  <select id="checkPassword" resultType="int" parameterType="map">
+    SELECT
+    COUNT (1)
+    FROM mark_one_user
+    WHERE password = #{password}
+    AND id = #{userId}
+  </select>
 
 </mapper>

@@ -22,6 +22,7 @@ public class UserController {
 
     /**
      * 用户登录
+     *
      * @param userName
      * @param password
      * @param session
@@ -39,6 +40,7 @@ public class UserController {
 
     /**
      * 用户登出
+     *
      * @param session
      * @return
      */
@@ -51,6 +53,7 @@ public class UserController {
 
     /**
      * 注册
+     *
      * @param user
      * @return
      */
@@ -62,18 +65,20 @@ public class UserController {
 
     /**
      * 校验所填信息是否有效
+     *
      * @param str
      * @param type
      * @return
      */
     @RequestMapping(value = "check_valid.do", method = RequestMethod.GET)
     @ResponseBody
-    public  ServerResponse<String> checkValid(String str, String type) {
+    public ServerResponse<String> checkValid(String str, String type) {
         return iUserService.checkValid(str, type);
     }
 
     /**
      * 获取用户信息
+     *
      * @param session
      * @return
      */
@@ -89,6 +94,7 @@ public class UserController {
 
     /**
      * 获取找回密码问题
+     *
      * @param username
      * @return
      */
@@ -100,6 +106,7 @@ public class UserController {
 
     /**
      * 校验问题的答案
+     *
      * @param username
      * @param question
      * @param answer
@@ -113,6 +120,7 @@ public class UserController {
 
     /**
      * 重置密码
+     *
      * @param username
      * @param newPassword
      * @param forgetToken
@@ -124,4 +132,21 @@ public class UserController {
         return iUserService.forgetResetPassword(username, newPassword, forgetToken);
     }
 
+
+    /**
+     * 登录状态下的重置密码
+     * @param session
+     * @param passwordNew
+     * @param passwordOld
+     * @return
+     */
+    @RequestMapping(value = "reset_password.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> resetPwd(HttpSession session, String passwordNew, String passwordOld) {
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if (user == null) {
+            return ServerResponse.createByErrorMessage("用户未登录");
+        }
+        return iUserService.resetPwd(passwordNew, passwordOld, user);
+    }
 }
