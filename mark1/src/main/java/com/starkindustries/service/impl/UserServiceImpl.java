@@ -27,17 +27,18 @@ public class UserServiceImpl implements IUserService {
 
         int resultCount = userMapper.checkUsername(username);
         if (resultCount == 0) {
-            return ServerResponse.createByErrorMessage("用户名不存在");
+            return ServerResponse.createByErrorMessage("用户不存在");
         }
 
         // todo 密码登录MD5
         String md5Password = MD5Util.MD5EncodeUtf8(password);
 
-        User user = userMapper.selectLogin(username,md5Password);
+        User user = userMapper.selectLogin(username, md5Password);
         if (user == null) {
             return ServerResponse.createByErrorMessage("密码错误");
         }
 
+        //防止返回对象里包含密码, 被窃取
         user.setPassword(StringUtils.EMPTY);
         return ServerResponse.createBySuccess("登录成功", user);
     }
@@ -104,10 +105,10 @@ public class UserServiceImpl implements IUserService {
         if (resultCount > 0) {
             // 说明问题及问题的答案是这个用户，且是正确的
             String forgetToken = UUID.randomUUID().toString();
-            TokenCache.setKey(TokenCache.TOKEN_PREFIX+username, forgetToken);
+            TokenCache.setKey(TokenCache.TOKEN_PREFIX + username, forgetToken);
             return ServerResponse.createBySuccessMessage(forgetToken);
-         }
-         return ServerResponse.createByErrorMessage("问题的答案错误");
+        }
+        return ServerResponse.createByErrorMessage("问题的答案错误");
     }
 
     public ServerResponse<String> forgetResetPassword(String username, String newPassword, String forgetToken) {
@@ -118,7 +119,7 @@ public class UserServiceImpl implements IUserService {
         if (validResponse.isSuccess()) {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
-        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX+username);
+        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX + username);
         if (StringUtils.isBlank(token)) {
             return ServerResponse.createByErrorMessage("token无效或过期");
         }
