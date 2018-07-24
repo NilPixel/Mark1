@@ -154,13 +154,13 @@
 
 
   <select id="checkUsername" parameterType="string" resultType="int">
-    SELECT COUNT (1) FROM  mark_one_user
+    SELECT COUNT(1) FROM  mark_one_user
     WHERE username = #{username}
 
   </select>
 
   <select id="checkEmail" parameterType="string" resultType="int">
-    SELECT COUNT (1) FROM  mark_one_user
+    SELECT COUNT(1) FROM  mark_one_user
     WHERE email = #{email}
 
   </select>
@@ -182,7 +182,7 @@
 
   <select id="checkAnswer" resultType="int" parameterType="map">
     SELECT
-    COUNT (1)
+    COUNT(1)
     FROM mark_one_user
     WHERE username = #{username}
     AND question = #{question}
@@ -197,14 +197,14 @@
   
   <select id="checkPassword" resultType="int" parameterType="map">
     SELECT
-    COUNT (1)
+    COUNT(1)
     FROM mark_one_user
     WHERE password = #{password}
     AND id = #{userId}
   </select>
   
   <select id="checkEmailByUserId" resultType="int" parameterType="map">
-    SELECT COUNT (1) FROM mark_one_user
+    SELECT COUNT(1) FROM mark_one_user
     WHERE email = #{email}
     AND id != #{userId}
   </select>
