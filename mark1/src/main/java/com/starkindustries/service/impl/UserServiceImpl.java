@@ -95,7 +95,7 @@ public class UserServiceImpl implements IUserService {
         }
         String question = userMapper.selectedQuestionByUsername(username);
         if (StringUtils.isNotBlank(question)) {
-            return ServerResponse.createBySuccessMessage(question);
+            return ServerResponse.createBySuccess(question);
         }
         return ServerResponse.createByErrorMessage("找回密码的问题是空的");
     }
@@ -106,7 +106,7 @@ public class UserServiceImpl implements IUserService {
             // 说明问题及问题的答案是这个用户，且是正确的
             String forgetToken = UUID.randomUUID().toString();
             TokenCache.setKey(TokenCache.TOKEN_PREFIX + username, forgetToken);
-            return ServerResponse.createBySuccessMessage(forgetToken);
+            return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByErrorMessage("问题的答案错误");
     }
@@ -128,9 +128,9 @@ public class UserServiceImpl implements IUserService {
             int rowCount = userMapper.updatePasswordByUsername(username, md5Password);
             if (rowCount > 0) {
                 return ServerResponse.createBySuccessMessage("修改密码成功");
-            } else {
-                return ServerResponse.createByErrorMessage("token错误, 请重新获取重置密码的token");
             }
+        } else {
+            return ServerResponse.createByErrorMessage("token错误, 请重新获取重置密码的token");
         }
         return ServerResponse.createByErrorMessage("修改密码失败");
     }
@@ -166,7 +166,7 @@ public class UserServiceImpl implements IUserService {
 
         int updateCount = userMapper.updateByPrimaryKeySelective(updateUser);
         if (updateCount > 0) {
-            return ServerResponse.createBySuccessMessage("更新个人信息成功");
+            return ServerResponse.createBySuccess("更新个人信息成功", updateUser);
         }
         return ServerResponse.createByErrorMessage("更新个人信息失败");
     }
