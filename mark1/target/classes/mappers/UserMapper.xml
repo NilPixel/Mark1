@@ -19,7 +19,7 @@
     id, username, password, email, phone, question, answer, role, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from mark_one_user
     where id = #{id,jdbcType=INTEGER}
@@ -141,14 +141,14 @@
   <update id="updateByPrimaryKey" parameterType="com.starkindustries.pojo.User">
     update mark_one_user
     set username = #{username,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      question = #{question,jdbcType=VARCHAR},
-      answer = #{answer,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = now()
+    password = #{password,jdbcType=VARCHAR},
+    email = #{email,jdbcType=VARCHAR},
+    phone = #{phone,jdbcType=VARCHAR},
+    question = #{question,jdbcType=VARCHAR},
+    answer = #{answer,jdbcType=VARCHAR},
+    role = #{role,jdbcType=INTEGER},
+    create_time = #{createTime,jdbcType=TIMESTAMP},
+    update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 
@@ -194,7 +194,7 @@
     SET password = #{newPassword}, update_time = now()
     WHERE username = #{username}
   </update>
-  
+
   <select id="checkPassword" resultType="int" parameterType="map">
     SELECT
     COUNT(1)
@@ -202,7 +202,7 @@
     WHERE password = #{password}
     AND id = #{userId}
   </select>
-  
+
   <select id="checkEmailByUserId" resultType="int" parameterType="map">
     SELECT COUNT(1) FROM mark_one_user
     WHERE email = #{email}
