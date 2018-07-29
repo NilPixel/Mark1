@@ -24,6 +24,13 @@ public class CategoryManageController {
     @Autowired
     private ICategoryService iCategoryService;
 
+    /**
+     * 添加分类
+     * @param session
+     * @param categoryName
+     * @param parentId
+     * @return
+     */
     @RequestMapping("addCategory.do")
     @ResponseBody
     public ServerResponse addCategory(HttpSession session, String categoryName, @RequestParam(value = "parentId", defaultValue = "0") int parentId) {
@@ -40,6 +47,13 @@ public class CategoryManageController {
         }
     }
 
+    /**
+     * 设置分类名称
+     * @param session
+     * @param categoryId
+     * @param categoryName
+     * @return
+     */
     @RequestMapping("setCategoryName.do")
     @ResponseBody
     public ServerResponse setCategoryName(HttpSession session, Integer categoryId, String categoryName) {
@@ -56,6 +70,12 @@ public class CategoryManageController {
         }
     }
 
+    /**
+     * 获取分类
+     * @param session
+     * @param categoryId
+     * @return
+     */
     @RequestMapping("getCategory.do")
     @ResponseBody
     public ServerResponse getChildrenParallelCategory(HttpSession session, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
@@ -72,6 +92,12 @@ public class CategoryManageController {
         }
     }
 
+    /**
+     * 获取分类父节点及子节点
+     * @param session
+     * @param categoryId
+     * @return
+     */
     @RequestMapping("getDeepCategory.do")
     @ResponseBody
     public ServerResponse getCategoryAndDeepChildrenParallelCategory(HttpSession session, @RequestParam(value = "categoryId", defaultValue = "0") Integer categoryId) {
