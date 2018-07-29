@@ -123,4 +123,5 @@
     FROM mark_one_category
     WHERE parent_id = #{parentId}
   </select>
+
 </mapper>
