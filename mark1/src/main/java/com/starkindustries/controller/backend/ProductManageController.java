@@ -44,6 +44,13 @@ public class ProductManageController {
         }
     }
 
+    /**
+     * 设置产品销售状态
+     * @param session
+     * @param productId
+     * @param status
+     * @return
+     */
     @RequestMapping("setSaleStatus.do")
     @ResponseBody
     public ServerResponse setSaleStatus(HttpSession session, Integer productId, Integer status) {
