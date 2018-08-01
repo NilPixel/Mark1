@@ -7,8 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a44d95-278b-4933-a9a2-39f76c86481f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/vo/ProductListVo.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/ProductManageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/ProductManageController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/starkindustries/service/IProductService.java" afterPath="$PROJECT_DIR$/src/main/java/com/starkindustries/service/IProductService.java" />
@@ -17,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/controller/backend/ProductManageController.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/dao/ProductMapper.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/starkindustries/service/impl/ProductServiceImpl.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/ProductMapper.xml" afterPath="$PROJECT_DIR$/target/classes/mappers/ProductMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,21 +47,11 @@
       <file leaf-file-name="ProductManageController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/ProductManageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+            <state relative-caret-position="242">
+              <caret line="112" column="13" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IUserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/IUserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -72,8 +59,8 @@
       <file leaf-file-name="IProductService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/IProductService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+            <state relative-caret-position="289">
+              <caret line="17" column="109" lean-forward="false" selection-start-line="17" selection-start-column="109" selection-end-line="17" selection-end-column="109" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,21 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="701">
-              <caret line="190" column="26" lean-forward="false" selection-start-line="190" selection-start-column="26" selection-end-line="190" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/ProductServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+            <state relative-caret-position="1058">
+              <caret line="133" column="11" lean-forward="false" selection-start-line="133" selection-start-column="11" selection-end-line="133" selection-end-column="115" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,8 +125,8 @@
       <file leaf-file-name="ProductMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="374">
+              <caret line="22" column="124" lean-forward="false" selection-start-line="22" selection-start-column="124" selection-end-line="22" selection-end-column="124" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,94 +137,59 @@
       <file leaf-file-name="ProductMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="183" column="19" lean-forward="true" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+            <state relative-caret-position="572">
+              <caret line="197" column="12" lean-forward="false" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
               <folding>
-                <marker date="1533132417953" expanded="true" signature="1541:1653" ph="select from mark_one_product" />
-                <marker date="1533132417953" expanded="true" signature="1739:1805" ph="delete from mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="1894:2382" ph="insert into mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="1894:2402" ph="insert into mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="4482:5557" ph="update mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="5658:6207" ph="update mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="6169:6207" ph="update mark_one_product... " />
-                <marker date="1533132417953" expanded="true" signature="6281:6374" ph="SELECT FROM mark_one_product" />
+                <marker date="1533134843239" expanded="true" signature="1541:1653" ph="select from mark_one_product" />
+                <marker date="1533134843239" expanded="true" signature="1739:1805" ph="delete from mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="1894:2382" ph="insert into mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="1894:2402" ph="insert into mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="4482:5557" ph="update mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="5658:6207" ph="update mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="6169:6207" ph="update mark_one_product... " />
+                <marker date="1533134843239" expanded="true" signature="6281:6374" ph="SELECT FROM mark_one_product" />
+                <marker date="1533134843239" expanded="true" signature="6479:6552" ph="SELECT FROM mark_one_product" />
+                <marker date="1533134843239" expanded="true" signature="6479:6744" ph="SELECT FROM mark_one_product" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductDetailVo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/vo/ProductDetailVo.java">
+      <file leaf-file-name="PayInfoMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/PayInfoMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="29" />
-              <folding>
-                <element signature="e#538#539#0" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#699#700#0" expanded="true" />
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#827#828#0" expanded="true" />
-                <element signature="e#854#855#0" expanded="true" />
-                <element signature="e#894#895#0" expanded="true" />
-                <element signature="e#926#927#0" expanded="true" />
-                <element signature="e#962#963#0" expanded="true" />
-                <element signature="e#994#995#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1086#1087#0" expanded="true" />
-                <element signature="e#1119#1120#0" expanded="true" />
-                <element signature="e#1148#1149#0" expanded="true" />
-                <element signature="e#1192#1193#0" expanded="true" />
-                <element signature="e#1228#1229#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
-                <element signature="e#1296#1297#0" expanded="true" />
-                <element signature="e#1346#1347#0" expanded="true" />
-                <element signature="e#1388#1389#0" expanded="true" />
-                <element signature="e#1424#1425#0" expanded="true" />
-                <element signature="e#1456#1457#0" expanded="true" />
-                <element signature="e#1506#1507#0" expanded="true" />
-                <element signature="e#1548#1549#0" expanded="true" />
-                <element signature="e#1584#1585#0" expanded="true" />
-                <element signature="e#1612#1613#0" expanded="true" />
-                <element signature="e#1658#1659#0" expanded="true" />
-                <element signature="e#1692#1693#0" expanded="true" />
-                <element signature="e#1725#1726#0" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-                <element signature="e#1796#1797#0" expanded="true" />
-                <element signature="e#1830#1831#0" expanded="true" />
-                <element signature="e#1864#1865#0" expanded="true" />
-                <element signature="e#1893#1894#0" expanded="true" />
-                <element signature="e#1938#1939#0" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2011#2012#0" expanded="true" />
-                <element signature="e#2044#2045#0" expanded="true" />
-                <element signature="e#2096#2097#0" expanded="true" />
-                <element signature="e#2140#2141#0" expanded="true" />
-                <element signature="e#2177#2178#0" expanded="true" />
-                <element signature="e#2210#2211#0" expanded="true" />
-                <element signature="e#2262#2263#0" expanded="true" />
-                <element signature="e#2306#2307#0" expanded="true" />
-                <element signature="e#2342#2343#0" expanded="true" />
-                <element signature="e#2374#2375#0" expanded="true" />
-                <element signature="e#2424#2425#0" expanded="true" />
-                <element signature="e#2466#2467#0" expanded="true" />
-                <element signature="e#2510#2511#0" expanded="true" />
-                <element signature="e#2549#2550#0" expanded="true" />
-                <element signature="e#2614#2615#0" expanded="true" />
-                <element signature="e#2670#2671#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/UserManageController.java">
+      <file leaf-file-name="OrderMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="37" column="1" lean-forward="false" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderItemMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderItemMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -320,11 +262,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/pojo/Category.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mappers/UserMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/vo/ProductDetailVo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/vo/ProductListVo.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/service/IProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/ProductManageController.java" />
       </list>
     </option>
@@ -379,7 +321,7 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="157" />
+    <option name="x" value="59" />
     <option name="y" value="23" />
     <option name="width" value="1399" />
     <option name="height" value="877" />
@@ -1054,12 +996,12 @@
       <workItem from="1532844521708" duration="3752000" />
       <workItem from="1532852882294" duration="4247000" />
       <workItem from="1532956929674" duration="1716000" />
-      <workItem from="1533131696541" duration="1395000" />
+      <workItem from="1533131696541" duration="3380000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81606000" />
+    <option name="totallyTimeSpent" value="83591000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1071,7 +1013,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="157" y="23" width="1399" height="877" extended-state="0" />
+    <frame x="59" y="23" width="1399" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1126,27 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderItemMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/PayInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1340,7 +1261,7 @@
         <state relative-caret-position="417">
           <caret line="102" column="53" lean-forward="false" selection-start-line="102" selection-start-column="53" selection-end-line="102" selection-end-column="53" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1381,13 +1302,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="70" lean-forward="false" selection-start-line="19" selection-start-column="70" selection-end-line="19" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1483,33 +1397,6 @@
         <state relative-caret-position="701">
           <caret line="190" column="26" lean-forward="false" selection-start-line="190" selection-start-column="26" selection-end-line="190" selection-end-column="26" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="183" column="19" lean-forward="true" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
-          <folding>
-            <marker date="1533132417953" expanded="true" signature="1541:1653" ph="select from mark_one_product" />
-            <marker date="1533132417953" expanded="true" signature="1739:1805" ph="delete from mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="1894:2382" ph="insert into mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="1894:2402" ph="insert into mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="4482:5557" ph="update mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="5658:6207" ph="update mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="6169:6207" ph="update mark_one_product... " />
-            <marker date="1533132417953" expanded="true" signature="6281:6374" ph="SELECT FROM mark_one_product" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1618,10 +1505,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/PayInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/OrderItemMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="33" lean-forward="false" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mappers/ProductMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="197" column="12" lean-forward="false" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
+          <folding>
+            <marker date="1533134843239" expanded="true" signature="1541:1653" ph="select from mark_one_product" />
+            <marker date="1533134843239" expanded="true" signature="1739:1805" ph="delete from mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="1894:2382" ph="insert into mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="1894:2402" ph="insert into mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="4482:5557" ph="update mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="5658:6207" ph="update mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="6169:6207" ph="update mark_one_product... " />
+            <marker date="1533134843239" expanded="true" signature="6281:6374" ph="SELECT FROM mark_one_product" />
+            <marker date="1533134843239" expanded="true" signature="6479:6552" ph="SELECT FROM mark_one_product" />
+            <marker date="1533134843239" expanded="true" signature="6479:6744" ph="SELECT FROM mark_one_product" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/impl/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+        <state relative-caret-position="1058">
+          <caret line="133" column="11" lean-forward="false" selection-start-line="133" selection-start-column="11" selection-end-line="133" selection-end-column="115" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1630,8 +1568,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/service/IProductService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+        <state relative-caret-position="289">
+          <caret line="17" column="109" lean-forward="false" selection-start-line="17" selection-start-column="109" selection-end-line="17" selection-end-column="109" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/dao/ProductMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="124" lean-forward="false" selection-start-line="22" selection-start-column="124" selection-end-line="22" selection-end-column="124" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1640,8 +1588,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/starkindustries/controller/backend/ProductManageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="109" column="5" lean-forward="true" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+        <state relative-caret-position="242">
+          <caret line="112" column="13" lean-forward="false" selection-start-line="112" selection-start-column="13" selection-end-line="112" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
