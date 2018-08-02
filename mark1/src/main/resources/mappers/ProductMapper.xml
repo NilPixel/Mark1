@@ -193,7 +193,7 @@
         AND NAME LIKE #{productName}
       </if>
       <if test="productId != null">
-        AND id = #{productName}
+        AND id = #{productId}
       </if>
     </where>
   </select>
