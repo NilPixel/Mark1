@@ -7,7 +7,7 @@ public class ProductListVo {
     private Integer categoryId;
     private String name;
 
-    private String subtittle;
+    private String subtitle;
     private String mainImage;
     private BigDecimal price;
 
@@ -38,12 +38,12 @@ public class ProductListVo {
         this.name = name;
     }
 
-    public String getSubtittle() {
-        return subtittle;
+    public String getSubtitle() {
+        return subtitle;
     }
 
-    public void setSubtittle(String subtittle) {
-        this.subtittle = subtittle;
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
     }
 
     public String getMainImage() {

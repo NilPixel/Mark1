@@ -81,7 +81,7 @@ public class ProductServiceImpl implements IProductService {
     private ProductDetailVo assembleProductDetailVo(Product product) {
         ProductDetailVo productDetailVo = new ProductDetailVo();
         productDetailVo.setId(product.getId());
-        productDetailVo.setSubtittle(product.getSubtitle());
+        productDetailVo.setSubtitle(product.getSubtitle());
         productDetailVo.setPrice(product.getPrice());
         productDetailVo.setMainImage(product.getMainImage());
         productDetailVo.setSubImages(product.getSubImages());
@@ -123,8 +123,9 @@ public class ProductServiceImpl implements IProductService {
         ProductListVo productListVo = new ProductListVo();
         productListVo.setId(product.getId());
         productListVo.setName(product.getName());
-        product.setCategoryId(product.getCategoryId());
-        productListVo.setImageHost(PropertiesUtil.getProperty(PropertiesUtil.getProperty("ftp.server.http.prefix", "http://img.happymmall.com/")));
+        productListVo.setSubtitle(product.getSubtitle());
+        productListVo.setCategoryId(product.getCategoryId());
+        productListVo.setImageHost(PropertiesUtil.getProperty("ftp.server.http.prefix", "http://img.happymmall.com/"));
         productListVo.setMainImage(product.getMainImage());
         productListVo.setPrice(product.getPrice());
         productListVo.setStatus(product.getStatus());
