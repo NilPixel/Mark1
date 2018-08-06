@@ -1,14 +1,18 @@
 package com.starkindustries.service.impl;
 
+import com.google.common.collect.Lists;
 import com.starkindustries.service.IFileService;
+import com.starkindustries.util.FTPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
 
+@Service("iFileService")
 public class FileServiceImpl implements IFileService {
 
     private Logger logger = LoggerFactory.getLogger(FileServiceImpl.class);
@@ -33,8 +37,11 @@ public class FileServiceImpl implements IFileService {
             // 文件已经上传成功了
 
             // todo 将targetFile 上传到我们的FTP服务器上
+            FTPUtil.uploadFile(Lists.<File>newArrayList(targetFile));
+            // 已经上传到ftp服务器上了
 
             // todo 上传完成后，删除upload下面的文件
+            targetFile.delete();
 
         } catch (IOException e) {
             logger.error("上传文件异常", e);

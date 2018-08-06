@@ -36,7 +36,7 @@ public class FTPUtil {
 
     public static boolean uploadFile(List<File> fileList) throws IOException {
         FTPUtil ftpUtil = new FTPUtil(ftpIp,21,ftpUser,ftpPasss);
-        logger.info("开始连接ftpfu服务器" + ftpUtil.getIp() + " " + ftpUtil.getUser() + " " + ftpUtil.getPort());
+        logger.info("开始连接ftp服务器" + ftpUtil.getIp() + " " + ftpUtil.getUser() + " " + ftpUtil.getPort());
         //此处有个异常， 往上抛就可以， 根据逻辑在业务中的具体位置，根据业务逻辑安排 进行try/catch 或者 throws
         boolean result = ftpUtil.updloadFile("img",fileList);
         logger.info("开始连接ftp服务器，结束上传，上传结果：{}",result);
