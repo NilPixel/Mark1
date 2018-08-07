@@ -144,6 +144,13 @@ public class ProductManageController {
         }
     }
 
+    /**
+     * 上传图片文件
+     * @param session
+     * @param file
+     * @param request
+     * @return
+     */
     @RequestMapping("upload.do")
     @ResponseBody
     public ServerResponse upload(HttpSession session, @RequestParam(value = "upload_file", required = false) MultipartFile file, HttpServletRequest request) {
@@ -166,6 +173,14 @@ public class ProductManageController {
         }
     }
 
+    /**
+     * 上传富文本图片文件
+     * @param session
+     * @param file
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping("richTextImgUpload.do")
     @ResponseBody
     public Map richTextImgUpload(HttpSession session, @RequestParam(value = "upload_file", required = false) MultipartFile file, HttpServletRequest request, HttpServletResponse response) {
@@ -199,6 +214,4 @@ public class ProductManageController {
             return resultMap;
         }
     }
-
-
 }
