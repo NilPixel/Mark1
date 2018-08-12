@@ -2,12 +2,15 @@ package com.starkindustries.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.google.common.collect.Lists;
+import com.starkindustries.common.Const;
 import com.starkindustries.common.ResponseCode;
 import com.starkindustries.common.ServerResponse;
 import com.starkindustries.dao.CategoryMapper;
 import com.starkindustries.dao.ProductMapper;
 import com.starkindustries.pojo.Category;
 import com.starkindustries.pojo.Product;
+import com.starkindustries.service.ICategoryService;
 import com.starkindustries.service.IProductService;
 import com.starkindustries.util.DateTimeUtil;
 import com.starkindustries.util.PropertiesUtil;
@@ -28,6 +31,9 @@ public class ProductServiceImpl implements IProductService {
 
     @Autowired
     private CategoryMapper categoryMapper;
+
+    @Autowired
+    private ICategoryService iCategoryService;
 
     public ServerResponse saveOrUpdateProduct(Product product) {
         if (product != null) {
@@ -69,6 +75,9 @@ public class ProductServiceImpl implements IProductService {
     }
 
     public ServerResponse<ProductDetailVo> manageProductDetail(Integer productId) {
+        if (productId == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
         Product product = productMapper.selectByPrimaryKey(productId);
         if (product == null) {
             return ServerResponse.createByErrorMessage("产品已下架或删除");
@@ -147,5 +156,57 @@ public class ProductServiceImpl implements IProductService {
         pageResult.setList(productListVoList);
         return ServerResponse.createBySuccess(pageResult);
     }
+
+    public ServerResponse<ProductDetailVo> getProductDetail(Integer productId) {
+        if (productId == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
+        Product product = productMapper.selectByPrimaryKey(productId);
+        if (product == null) {
+            return ServerResponse.createByErrorMessage("产品已下架或删除");
+        }
+        if (product.getStatus() != Const.ProductStatusEnum.ON_SALE.getCode()) {
+            return ServerResponse.createByErrorMessage("产品已下架或删除");
+        }
+        // VO对象 value object
+        ProductDetailVo productDetailVo = assembleProductDetailVo(product);
+        return ServerResponse.createBySuccess(productDetailVo);
+    }
+
+
+    public ServerResponse<PageInfo> getProductByKeywordCategory(String keyword, Integer categoryId, int pageNum, int pageSize, String orderBy) {
+        if (StringUtils.isBlank(keyword) && categoryId == null) {
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.ILLEGAL_ARGUMENT.getCode(), ResponseCode.ILLEGAL_ARGUMENT.getDesc());
+        }
+
+        List<Integer> categoryIdList = new ArrayList<>();
+
+        if (categoryId != null) {
+            Category category = categoryMapper.selectByPrimaryKey(categoryId);
+            if (category == null && StringUtils.isBlank(keyword)) {
+                // 没有该分类，并且还没有关键字，返回空集合，不报错
+                PageHelper.startPage(pageNum, pageSize);
+                List<ProductListVo> productListVoList = Lists.newArrayList();
+                PageInfo pageInfo = new PageInfo(productListVoList);
+                return ServerResponse.createBySuccess(pageInfo);
+            }
+
+            categoryIdList = iCategoryService.selectedCategoryAndChildrenById(category.getId()).getData();
+        }
+        if (StringUtils.isNotBlank(keyword)) {
+            keyword = new StringBuilder().append("%").append(keyword).append("%").toString();
+        }
+        PageHelper.startPage(pageNum, pageSize);
+        // 排序处理
+        if (StringUtils.isNotBlank(orderBy)) {
+            if (Const.ProductListOrderBy.PRICE_ASC_DESC.contains(orderBy)) {
+                String[] orderByArray = orderBy.split("_");
+                PageHelper.orderBy(orderByArray[0]+""+orderByArray[1]);
+            }
+        }
+        List<Product> productList = 
+
+    }
+
 
 }
