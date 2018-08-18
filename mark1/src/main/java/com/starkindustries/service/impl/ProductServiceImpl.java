@@ -201,7 +201,7 @@ public class ProductServiceImpl implements IProductService {
         if (StringUtils.isNotBlank(orderBy)) {
             if (Const.ProductListOrderBy.PRICE_ASC_DESC.contains(orderBy)) {
                 String[] orderByArray = orderBy.split("_");
-                PageHelper.orderBy(orderByArray[0]+""+orderByArray[1]);
+                PageHelper.orderBy(orderByArray[0]+" "+orderByArray[1]);
             }
         }
         List<Product> productList = productMapper.selectByNameAndCategoryIds(StringUtils.isBlank(keyword) ? null : keyword, categoryIdList.size() == 0 ? null : categoryIdList);
